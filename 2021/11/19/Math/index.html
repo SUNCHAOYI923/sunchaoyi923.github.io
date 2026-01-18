@@ -1,0 +1,988 @@
+
+<!DOCTYPE html><html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
+  
+  
+  <meta name="generator" content="Hexo 8.1.1">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin><link rel="preconnect" href="https://unpkg.com" crossorigin><link rel="preconnect" href="https://cdn.bootcdn.net" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  <title>初级数学 学习笔记 - SUNCHAOYI</title>
+
+  
+    <meta name="description" content="数论基本概念1. 整除法n &#x3D; ak + r(0 \le r &lt; a) \to k &#x3D; \lfloor \frac{n}{a} \rfloor2. 算数基本定理$p_i$ 为素数，且 $p_i &lt; p_{i + 1}$，则有： n &#x3D; p_1^{a_1} p_2^{a_2} \cdots p_m ^ {a_m}3. 最大公约数与最小公倍数\gcd (a,b) \times  \operato">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初级数学 学习笔记">
+<meta property="og:url" content="http://example.com/2021/11/19/Math/">
+<meta property="og:site_name" content="SUNCHAOYI">
+<meta property="og:description" content="数论基本概念1. 整除法n &#x3D; ak + r(0 \le r &lt; a) \to k &#x3D; \lfloor \frac{n}{a} \rfloor2. 算数基本定理$p_i$ 为素数，且 $p_i &lt; p_{i + 1}$，则有： n &#x3D; p_1^{a_1} p_2^{a_2} \cdots p_m ^ {a_m}3. 最大公约数与最小公倍数\gcd (a,b) \times  \operato">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-18T13:38:13.993Z">
+<meta property="article:author" content="Chaoyi, Sun">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.33.1">
+
+
+  
+    <link rel="shortcut icon" href="/img/Favicon.gif">
+  
+
+  
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Chaoyi, Sun","sameAs":[]},"dateCreated":"2021-11-19T00:00:00+08:00","dateModified":"2026-01-18T21:38:13+08:00","datePublished":"2021-11-19T00:00:00+08:00","description":"","headline":"初级数学 学习笔记","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/11/19/Math/"},"publisher":{"@type":"Organization","name":"Chaoyi, Sun","sameAs":[]},"url":"http://example.com/2021/11/19/Math/","thumbnailUrl":"/img/programming.png","image":1}</script>
+  <link rel="shortcut icon" href="/img/Avatar.jpg"><meta name="theme-color" content="#f8f8f8"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" media="all" />
+</head>
+<body>
+
+<div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><div class="icon"><img no-lazy class="icon" src="/img/Avatar.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><a class="title" href="/"><div class="main">ChaoWenYishi</div><div class="sub normal cap">Life & Academy</div><div class="sub hover cap" style="opacity:0"> Designed by SUNCHAOYI</div></a></div></header>
+
+<div class="nav-area">
+
+<nav class="menu dis-select"><a class="nav-item" title="Blog" href="/" style="color:#1BCDFC"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5.879 2.879C5 3.757 5 5.172 5 8v8c0 2.828 0 4.243.879 5.121C6.757 22 8.172 22 11 22h2c2.828 0 4.243 0 5.121-.879C19 20.243 19 18.828 19 16V8c0-2.828 0-4.243-.879-5.121C17.243 2 15.828 2 13 2h-2c-2.828 0-4.243 0-5.121.879M8.25 17a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75M9 12.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5zM8.25 9A.75.75 0 0 1 9 8.25h6a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 8.25 9" clip-rule="evenodd"/><path fill="currentColor" d="M5.235 4.058C5 4.941 5 6.177 5 8v8c0 1.823 0 3.058.235 3.942L5 19.924c-.975-.096-1.631-.313-2.121-.803C2 18.243 2 16.828 2 14v-4c0-2.829 0-4.243.879-5.121c.49-.49 1.146-.707 2.121-.803zm13.53 15.884C19 19.058 19 17.822 19 16V8c0-1.823 0-3.059-.235-3.942l.235.018c.975.096 1.631.313 2.121.803C22 5.757 22 7.17 22 9.999v4c0 2.83 0 4.243-.879 5.122c-.49.49-1.146.707-2.121.803z" opacity=".5"/></svg></a><a class="nav-item active" title="Column" href="/topic/" style="color:#3DC550"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M14.25 4.48v3.057c0 .111 0 .27.02.406a.936.936 0 0 0 .445.683a.96.96 0 0 0 .783.072c.13-.04.272-.108.378-.159L17 8.005l1.124.534c.106.05.248.119.378.16a.958.958 0 0 0 .783-.073a.936.936 0 0 0 .444-.683c.021-.136.021-.295.021-.406V3.031c.113-.005.224-.01.332-.013C21.154 2.98 22 3.86 22 4.933v11.21c0 1.112-.906 2.01-2.015 2.08c-.97.06-2.108.179-2.985.41c-1.082.286-1.99 1.068-3.373 1.436c-.626.167-1.324.257-1.627.323V5.174c.32-.079 1.382-.203 1.674-.371c.184-.107.377-.216.576-.323m5.478 8.338a.75.75 0 0 1-.546.91l-4 1a.75.75 0 0 1-.364-1.456l4-1a.75.75 0 0 1 .91.546" clip-rule="evenodd"/><path fill="currentColor" d="M18.25 3.151c-.62.073-1.23.18-1.75.336a8.2 8.2 0 0 0-.75.27v3.182l.75-.356l.008-.005a1.13 1.13 0 0 1 .492-.13c.047 0 .094.004.138.01c.175.029.315.1.354.12l.009.005l.749.356V3.647z"/><path fill="currentColor" d="M12 5.214c-.334-.064-1.057-.161-1.718-.339C8.938 4.515 8.05 3.765 7 3.487c-.887-.234-2.041-.352-3.018-.412C2.886 3.007 2 3.9 2 4.998v11.146c0 1.11.906 2.01 2.015 2.079c.97.06 2.108.179 2.985.41c.486.129 1.216.431 1.873.726c1.005.451 2.052.797 3.127 1.034z" opacity=".5"/><path fill="currentColor" d="M4.273 12.818a.75.75 0 0 1 .91-.545l4 1a.75.75 0 1 1-.365 1.455l-4-1a.75.75 0 0 1-.545-.91m.909-4.545a.75.75 0 1 0-.364 1.455l4 1a.75.75 0 0 0 .364-1.455z"/></svg></a><a class="nav-item" title="To be Continued" href="/explore/" style="color:#FA6400"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M20 12a8 8 0 1 1-16 0a8 8 0 0 1 16 0" opacity=".5"/><path fill="currentColor" d="M17.712 5.453c1.047-.193 2.006-.259 2.797-.152c.77.103 1.536.393 1.956 1.064c.446.714.312 1.542-.012 2.258c-.33.728-.918 1.499-1.672 2.268c-1.516 1.547-3.836 3.226-6.597 4.697c-2.763 1.472-5.495 2.484-7.694 2.92c-1.095.217-2.098.299-2.923.201c-.8-.095-1.6-.383-2.032-1.075c-.47-.752-.296-1.63.07-2.379c.375-.768 1.032-1.586 1.872-2.403L4 12.416c0 .219.083.71.168 1.146c.045.23.09.444.123.596c-.652.666-1.098 1.263-1.339 1.756c-.277.567-.208.825-.145.925c.072.116.305.305.937.38c.609.073 1.44.018 2.455-.183c2.02-.4 4.613-1.351 7.28-2.772c2.667-1.42 4.85-3.015 6.23-4.423c.694-.707 1.15-1.334 1.377-1.836c.233-.515.167-.75.107-.844c-.07-.112-.289-.294-.883-.374c-.542-.072-1.272-.041-2.163.112L16.87 5.656c.338-.101.658-.17.842-.203"/></svg></a><a class="nav-item" title="To be Continued" href="/friends/" style="color:#F44336"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m13.629 20.472l-.542.916c-.483.816-1.69.816-2.174 0l-.542-.916c-.42-.71-.63-1.066-.968-1.262c-.338-.197-.763-.204-1.613-.219c-1.256-.021-2.043-.098-2.703-.372a5 5 0 0 1-2.706-2.706C2 14.995 2 13.83 2 11.5v-1c0-3.273 0-4.91.737-6.112a5 5 0 0 1 1.65-1.651C5.59 2 7.228 2 10.5 2h3c3.273 0 4.91 0 6.113.737a5 5 0 0 1 1.65 1.65C22 5.59 22 7.228 22 10.5v1c0 2.33 0 3.495-.38 4.413a5 5 0 0 1-2.707 2.706c-.66.274-1.447.35-2.703.372c-.85.015-1.275.022-1.613.219c-.338.196-.548.551-.968 1.262" opacity=".5"/><path fill="currentColor" d="M10.99 14.308c-1.327-.978-3.49-2.84-3.49-4.593c0-2.677 2.475-3.677 4.5-1.609c2.025-2.068 4.5-1.068 4.5 1.609c0 1.752-2.163 3.615-3.49 4.593c-.454.335-.681.502-1.01.502c-.329 0-.556-.167-1.01-.502"/></svg></a></nav>
+</div>
+<div class="widgets">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="Search"></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div>
+
+<widget class="widget-wrapper related post-list"><div class="widget-header dis-select"><span class="name">Topic: Programming Contest</span></div><div class="widget-body"><a class="item" href="/2025/12/02/CCPC%20Chongqing25/"><span class="title">2025 CCPC 重庆站</span></a><a class="item" href="/2025/11/26/CF2110F/"><span class="title">题解：CF2110F Faculty</span></a><a class="item" href="/2025/11/24/ICPC%20Nanjing25/"><span class="title">2025 ICPC 南京站</span></a><a class="item" href="/2025/11/05/ICPC%20Wuhan25/"><span class="title">2025 ICPC 武汉站</span></a><a class="item" href="/2025/09/19/CF2143E/"><span class="title">题解：CF2143E Make Good</span></a><a class="item" href="/2025/09/16/CF2144E/"><span class="title">题解：CF2144E Looking at Towers</span></a><a class="item" href="/2025/09/10/CF2140E/"><span class="title">题解：CF2140E2 Prime Gaming</span></a><a class="item" href="/2025/09/08/CF2134E/"><span class="title">题解：CF2134E Power Boxes</span></a><a class="item" href="/2025/08/07/CCPC%20CQ24%20Finite%20Decimal/"><span class="title">CCPC 2024 重庆站 有限小数</span></a><a class="item" href="/2025/08/06/CF1453D/"><span class="title">题解：CF1453D Checkpoints</span></a><a class="item" href="/2025/08/04/CF2129C/"><span class="title">题解：CF2129C Interactive RBS</span></a><a class="item" href="/2025/07/27/CF1010C/"><span class="title">题解：CF1010C Border</span></a><a class="item" href="/2025/07/01/Newcoder25/"><span class="title">2025 牛客暑期多校训练记录</span></a><a class="item" href="/2025/06/29/CF2120E/"><span class="title">题解：CF2120E Lanes of Cars</span></a><a class="item" href="/2025/06/26/CF2121H/"><span class="title">题解：CF2121H Ice Baby</span></a><a class="item" href="/2025/06/07/UTPC2024C/"><span class="title">【题解】[UTPC2024] C.Card Deck</span></a><a class="item" href="/2025/05/07/CF2107E/"><span class="title">题解：CF2107E Ain and Apple Tree</span></a><a class="item" href="/2025/05/02/XCPC2025-2026/"><span class="title">2025-2026 XCPC</span></a><a class="item" href="/2025/01/06/Floyd/"><span class="title">你真的懂 Floyd 吗</span></a><a class="item" href="/2024/12/28/GameTheory/"><span class="title">博弈论与状压</span></a><a class="item" href="/2024/12/27/Topo/"><span class="title">树的拓扑序</span></a><a class="item" href="/2024/12/26/Inversion/"><span class="title">逆序对与期望</span></a><a class="item" href="/2024/12/20/GCD/"><span class="title">GCD 题集</span></a><a class="item" href="/2024/11/21/Bits/"><span class="title">位思想</span></a><a class="item" href="/2024/11/02/ICPC%20Nanjing24/"><span class="title">ICPC 小白勇闯南京</span></a><a class="item" href="/2024/10/30/Geometry/"><span class="title">计算几何 学习笔记</span></a><a class="item" href="/2024/09/01/XCPC2024/"><span class="title">XCPC 2024</span></a><a class="item" href="/2024/08/13/XOR/"><span class="title">求 $[1,n]$ 的异或和</span></a><a class="item" href="/2023/09/29/NOIP2023/"><span class="title">NOIP 2023 摆烂记</span></a><a class="item" href="/2022/10/04/NOIP2022/"><span class="title">2022 NOIP 备赛记</span></a><a class="item" href="/2022/08/21/Time%20Complexity/"><span class="title">浅谈 $T(n) = a(\lfloor\frac{n}{b}\rfloor) + f(n)$</span></a><a class="item" href="/2022/07/24/Data%20Structure/"><span class="title">一些关于数据结构的杂谈</span></a><a class="item" href="/2022/01/22/WC2022/"><span class="title">WC 2022 学习笔记</span></a><a class="item active" href="/2021/11/19/Math/"><span class="title">初级数学 学习笔记</span><svg class="active-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M21 11.098v4.993c0 3.096 0 4.645-.734 5.321c-.35.323-.792.526-1.263.58c-.987.113-2.14-.907-4.445-2.946c-1.02-.901-1.529-1.352-2.118-1.47a2.225 2.225 0 0 0-.88 0c-.59.118-1.099.569-2.118 1.47c-2.305 2.039-3.458 3.059-4.445 2.945a2.238 2.238 0 0 1-1.263-.579C3 20.736 3 19.188 3 16.091v-4.994C3 6.81 3 4.666 4.318 3.333C5.636 2 7.758 2 12 2c4.243 0 6.364 0 7.682 1.332C21 4.665 21 6.81 21 11.098" opacity=".5"/><path fill="currentColor" d="M9 5.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5z"/></svg></a><a class="item" href="/2021/11/06/NOIP2021/"><span class="title">2021 NOIP 备赛记</span></a><a class="item" href="/2020/11/07/CSP2020/"><span class="title">CSP 2020 场外篇</span></a></div></widget>
+
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">Recent Update</span></div><div class="widget-body fs14"><a class="item title" href="/2025/05/02/XCPC2025-2026/"><span class="title">2025-2026 XCPC</span></a><a class="item title" href="/2025/06/07/UTPC2024C/"><span class="title">【题解】[UTPC2024] C.Card Deck</span></a><a class="item title" href="/2025/05/07/CF2107E/"><span class="title">题解：CF2107E Ain and Apple Tree</span></a><a class="item title" href="/2025/06/26/CF2121H/"><span class="title">题解：CF2121H Ice Baby</span></a><a class="item title" href="/2025/06/29/CF2120E/"><span class="title">题解：CF2120E Lanes of Cars</span></a><a class="item title" href="/2025/08/04/CF2129C/"><span class="title">题解：CF2129C Interactive RBS</span></a><a class="item title" href="/2025/07/27/CF1010C/"><span class="title">题解：CF1010C Border</span></a><a class="item title" href="/2025/08/06/CF1453D/"><span class="title">题解：CF1453D Checkpoints</span></a><a class="item title" href="/2025/08/07/CCPC%20CQ24%20Finite%20Decimal/"><span class="title">CCPC 2024 重庆站 有限小数</span></a><a class="item title" href="/2025/09/10/CF2140E/"><span class="title">题解：CF2140E2 Prime Gaming</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a>
+<span class="sep"></span><a class="cap breadcrumb" id="menu" href="/topic/">Topic</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/2025/12/02/CCPC%20Chongqing25/">Programming Contest</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2021-11-18T16:00:00.000Z">2021-11-19</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2026-01-18T13:38:13.993Z">2026-01-18</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>初级数学 学习笔记</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h2 id="数论基本概念"><a href="#数论基本概念" class="headerlink" title="数论基本概念"></a>数论基本概念</h2><h3 id="1-整除法"><a href="#1-整除法" class="headerlink" title="1. 整除法"></a>1. 整除法</h3><script type="math/tex; mode=display">n = ak + r(0 \le r < a) \to k = \lfloor \frac{n}{a} \rfloor</script><h3 id="2-算数基本定理"><a href="#2-算数基本定理" class="headerlink" title="2. 算数基本定理"></a>2. 算数基本定理</h3><p>$p_i$ 为素数，且 $p_i &lt; p_{i + 1}$，则有：</p>
+<script type="math/tex; mode=display">n = p_1^{a_1} p_2^{a_2} \cdots p_m ^ {a_m}</script><h3 id="3-最大公约数与最小公倍数"><a href="#3-最大公约数与最小公倍数" class="headerlink" title="3. 最大公约数与最小公倍数"></a>3. 最大公约数与最小公倍数</h3><script type="math/tex; mode=display">\gcd (a,b) \times  \operatorname{lcm} (a,b) = \gcd (a,b) \times \frac{a \times b}{\gcd(a,b)} = a \times b</script><h3 id="4-求一个数的约数个数"><a href="#4-求一个数的约数个数" class="headerlink" title="4. 求一个数的约数个数"></a>4. 求一个数的约数个数</h3><p>一个数的每个因子均由若干个素因子构成，第 $i$ 个素因子共有 $i + 1$ 种取法，所以总个数为（$k$ 为素因子的总个数）：</p>
+<script type="math/tex; mode=display">\prod_{i = 1}^{k} (a_i + 1)</script><p>代码如下：</p>
+   <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">divisor</span> <span class="params">(<span class="type">int</span> n)</span><span class="comment">//算数基本定理</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> tot = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>;i * i &lt;= n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (n % i == <span class="number">0</span>) n /= i,++cnt;<span class="comment">//素因子i 在 num 中的个数</span></span><br><span class="line">        	tot *= (cnt + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (n &gt; <span class="number">1</span>) tot *= <span class="number">2</span>;<span class="comment">//剩下的 n 也为素数的情况</span></span><br><span class="line">    <span class="keyword">return</span> tot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">divisor_direct</span> <span class="params">(<span class="type">int</span> n)</span><span class="comment">//直接暴力枚举</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>;i * i &lt;= n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            ++cnt;</span><br><span class="line">            <span class="keyword">if</span> (n / i != i) ++cnt;<span class="comment">//完全平方数时会重复计算</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="素数筛法"><a href="#素数筛法" class="headerlink" title="素数筛法"></a>素数筛法</h2><h3 id="1-朴素筛法"><a href="#1-朴素筛法" class="headerlink" title="1. 朴素筛法"></a>1. 朴素筛法</h3><p>将每一个数的所有倍数都筛去，时间复杂度为：$O(\frac{n}{2} + \frac{n}{3} + \cdots + 1)$。所以当 $\lim(n \to \infty)$ 时，近似为 $O(n\log n)$。</p>
+<h3 id="2-常数优化"><a href="#2-常数优化" class="headerlink" title="2. 常数优化"></a>2. 常数优化</h3><p>枚举小的那个因子。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>;i * i &lt;= n;++i)</span><br><span class="line">    <span class="keyword">if</span> (!flag[i])</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i * i;j &lt;= n;j += i) flag[j] = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="3-线性筛"><a href="#3-线性筛" class="headerlink" title="3. 线性筛"></a>3. 线性筛</h3><p>时间复杂度为 $O(n)$。</p>
+   <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">work</span> <span class="params">(<span class="type">int</span> n)</span><span class="comment">//保证每个数最多被筛一次</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>;i &lt;= n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!flag[i]) p[++cnt] = i;<span class="comment">//素数</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>;j &lt;= cnt;++j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (i * p[j] &gt; n) <span class="keyword">break</span>;<span class="comment">//边界</span></span><br><span class="line">            flag[i * p[j]] = <span class="number">1</span>;<span class="comment">//p[j] 是 i * p[j] 的最小素因子</span></span><br><span class="line">            <span class="keyword">if</span> (i % p[j] == <span class="number">0</span>) <span class="keyword">break</span>;<span class="comment">//之后 p[j] 不为 i * p[j] 的最小素因子</span></span><br><span class="line">            <span class="comment">//若 p[j] = 2,i = 4，则之后 p[j] = 3,i = 4 不符合条件。否则 12 = 2*6 = 3 * 4 被筛的次数 &gt; 1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="欧几里得算法"><a href="#欧几里得算法" class="headerlink" title="欧几里得算法"></a>欧几里得算法</h4><h3 id="1-辗转相减"><a href="#1-辗转相减" class="headerlink" title="1. 辗转相减"></a>1. 辗转相减</h3><p>若 $a &gt; b$，则 $\gcd (a,b) = \gcd (a - b,b)$。</p>
+<h3 id="2-辗转相除"><a href="#2-辗转相除" class="headerlink" title="2. 辗转相除"></a>2. 辗转相除</h3><p>若 $a &gt; b$，则 $\gcd (a,b) = \gcd (b,a \bmod b)$。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd</span> <span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a &lt; b) <span class="built_in">swap</span> (a,b);</span><br><span class="line">    <span class="keyword">return</span> (!b) ? a : <span class="built_in">gcd</span> (b,a % b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="扩展欧几里得算法"><a href="#扩展欧几里得算法" class="headerlink" title="扩展欧几里得算法"></a>扩展欧几里得算法</h2><p>由欧几里得算法可知 $ax + by = \gcd (a,b)$ 一定存在一组解。那么求解 $ax + by = c$ 时，过程如下：</p>
+<script type="math/tex; mode=display">ax + by = c(a > b)\\\texttt{设 } ax' + by' = \gcd (a,b)\\\texttt{则辗转相减知 } (a - b) \times x_1 + b \times y_1 = \gcd (a,b)\\\therefore a \times x_1 + b \times (y_1 - x_1) = \gcd (a,b)\\\therefore x = x_1,y = y_1 - x_1\\\\\texttt{由辗转相除代替辗转相减，则有 } b \times x_1 + a \bmod b \times y_1 = \gcd (a,b)\\\because a \bmod b = a - \lfloor \frac{a}{b} \rfloor \times b\\\therefore b \times x_1 + (a - \lfloor \frac{a}{b} \rfloor \times b) \times y_1 = \gcd (a,b)\\\therefore a \times y_1 + b \times (x_1 - \lfloor \frac{a}{b} \rfloor \times y_1) = \gcd (a,b)\\\therefore x = y_1,y = x_1 - \lfloor \frac{a}{b} \rfloor \times y_1</script><p>不断递归得到 $\gcd (a,b) \times  x + 0 \times y = \gcd (a,b)$，得到特解 $x = 1,y = 0$。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">exgcd</span> <span class="params">(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> &amp;x,<span class="type">int</span> &amp;y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> g = a;</span><br><span class="line">    <span class="keyword">if</span> (b)</span><br><span class="line">    &#123;</span><br><span class="line">        g = <span class="built_in">exgcd</span> (b,a % b,x,y);</span><br><span class="line">        x -= (a / b) * y;</span><br><span class="line">        <span class="built_in">swap</span> (x,y);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> x = <span class="number">1</span>,y = <span class="number">0</span>;<span class="comment">//一组特解</span></span><br><span class="line">    <span class="keyword">return</span> g;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>设 $k_1 = \dfrac{a}{\gcd (a,b)},k_2 = \dfrac{b} {\gcd (a,b)}$，显然 $\gcd (k_1,k_2) = 1$。设 $x,y$ 的最小变化单位是 $d_1,d_2$，则此时 $k_1 = d_2,k_2 = d_1$，所以通解是：</p>
+<script type="math/tex; mode=display">\begin{cases}x = x + k \times \dfrac{b}{\gcd(a,b)}\\y = y - k \times \dfrac{a}{\gcd(a,b)}\\k \in \rm{Z}    \\\end{cases}</script><h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><h3 id="2-积性函数"><a href="#2-积性函数" class="headerlink" title="2. 积性函数"></a>2. 积性函数</h3><p>设 $p$ 为质数，求 $\phi(p^k)$：</p>
+<script type="math/tex; mode=display">
+\phi(p^k) = p^k - \frac{p^k}{p} = p^k - p^{k-1} = (p-1)p^{k-1}</script><p>同理，对于两个不同质数的乘积 $n = p_1^{a_1} p_2^{a_2}$，由容斥原理：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\phi(p_1^{a_1} p_2^{a_2}) &= p_1^{a_1} p_2^{a_2} - \frac{p_1^{a_1} p_2^{a_2}}{p_1} - \frac{p_1^{a_1} p_2^{a_2}}{p_2} + \frac{p_1^{a_1} p_2^{a_2}}{p_1 p_2} \\
+&= p_1^{a_1} p_2^{a_2} \left(1 - \frac{1}{p_1} - \frac{1}{p_2} + \frac{1}{p_1 p_2}\right) \\
+&= p_1^{a_1} p_2^{a_2} \left(1 - \frac{1}{p_1}\right)\left(1 - \frac{1}{p_2}\right) \\
+&= \phi(p_1^{a_1}) \times \phi(p_2^{a_2})
+\end{aligned}</script><p>因此，欧拉函数是积性函数。</p>
+<h3 id="3-计算通式"><a href="#3-计算通式" class="headerlink" title="3. 计算通式"></a>3. 计算通式</h3><p>将 $n$ 进行质因数分解：</p>
+<script type="math/tex; mode=display">n = p_1^{a_1} p_2^{a_2} \cdots p_m^{a_m}</script><p>由积性函数性质：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\phi(n) &= \phi(p_1^{a_1}) \times \phi(p_2^{a_2}) \times \cdots \times \phi(p_m^{a_m}) \\
+&= \prod_{i=1}^m (p_i - 1)p_i^{a_i-1} \\
+&= \prod_{i=1}^m p_i^{a_i} \times \frac{p_i - 1}{p_i} \\
+&= n \times \prod_{i=1}^m \frac{p_i - 1}{p_i}
+\end{aligned}</script><p>这个公式可以直接用于计算任意正整数的欧拉函数值。</p>
+<h3 id="5-代码"><a href="#5-代码" class="headerlink" title="5. 代码"></a>5. 代码</h3><ol>
+<li><p>根据欧拉函数通式求解。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">work</span> <span class="params">(<span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    phi[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>;i &lt;= n;++i) phi[i] = i;<span class="comment">//先标记为自己，方便标记质数，也方便为公式法求解</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>;i &lt;= n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (phi[i] == i)<span class="comment">//为素数</span></span><br><span class="line">        	<span class="keyword">for</span> (<span class="type">int</span> j = i;j &lt;= n;j += i) phi[j] = phi[j] / i * (i - <span class="number">1</span>);<span class="comment">//其中的一个 (pi - 1) / pi</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>根据线性筛实现 $O(n)$ 的时间复杂度求解。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">work</span> <span class="params">(<span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    phi[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>;i &lt;= n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!flag[i])</span><br><span class="line">        &#123;</span><br><span class="line">            p[++cnt] = i;</span><br><span class="line">            phi[i] = i - <span class="number">1</span>;<span class="comment">//素数 p 的欧拉函数为 p - 1</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>;j &lt;= cnt;++j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (i * p[j] &gt; n) <span class="keyword">break</span>;</span><br><span class="line">            flag[i * p[j]] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % p[j] == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                phi[i * p[j]] = phi[i] * p[j];<span class="comment">//若 p 能整除 n / p，则 φ (n) = φ (n / p) * p</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            phi[i * p[j]] = phi[i] * (p[j] - <span class="number">1</span>);<span class="comment">//若 p 与 n / p 互质，且 p 为质数，则 φ (n)  = φ (n / p) * (p - 1)</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用性质 $f$ 的求解。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">work</span> <span class="params">(<span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;++i) phi[i] = i;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;++i)</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i + i;j &lt;= n;j += i) phi[j] -= phi[i];<span class="comment">//减去自己所有因子的值即为 φ(i)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="欧拉定理"><a href="#欧拉定理" class="headerlink" title="欧拉定理"></a>欧拉定理</h2><p>如果 $a,n$ 为正整数，且 $\gcd (a,n) = 1$，则 $a^ {\phi(n)} ≡ 1 \pmod n$。</p>
+<p>已知 $a,n \in \rm{N_{+}}$，且 $\gcd (a,n) = 1$。求证 $a^{\phi(n)} \equiv 1 \pmod n$。</p>
+<script type="math/tex; mode=display">证明：令集合\ A = \{x_1,x_2,\cdots,x_{\phi(n)}\}\ 来表示所有不大于\ n\ 且与其互质的数\\再令集合\ B = \{ax_1 \bmod n,ax_2 \bmod n,\cdots,ax_{\phi{n}} \bmod n\}\\\because \gcd (a,n) = 1,\gcd (x_i,n) = 1\\\therefore \gcd (ax_i,n) = 1\\由欧几里得算法可知\  \gcd (ax_i \bmod n,n) = 1\\\\假设\ B\ 集合中的存在相同元素，即\ ax_1 = k_1n + b,ax_2 = k_2n + b\ (0 < x_1,x_2 < n\ 且\ \gcd(a,n) = 1)\\则有\ a(x_1 - x_2) = (k_1 - k_2)b\\\because \gcd (a,n) = 1\\\therefore x_1 - x_2 = n,k_1 - k_2 = a\\\because 0 < x_1,x_2 < n\\\therefore x_1 - x_2 = n\ 不成立，与假设矛盾，故\ B\ 集合中元素互不相同\\\\\therefore A = B\\\therefore a^{\phi(n)}\times \prod_{i = 1}^{\phi(n)} x_i \equiv \prod_{i = 1}^{\phi(n)} a \times x_i \equiv \prod_{i = 1}^{\phi(n)} x_i \pmod n\\\\\therefore a^{\phi(n)} \equiv 1 \pmod n</script><h2 id="乘法逆元"><a href="#乘法逆元" class="headerlink" title="乘法逆元"></a>乘法逆元</h2><h3 id="1-费马小定理"><a href="#1-费马小定理" class="headerlink" title="1. 费马小定理"></a>1. 费马小定理</h3><p>欧拉定理的特殊情况，当 $n$ 为质数时：</p>
+<script type="math/tex; mode=display">\because \phi(n) = n - 1\\   \therefore a^{\phi(n)} = a^{n - 1} \equiv 1 \mod n</script><h3 id="2-计算"><a href="#2-计算" class="headerlink" title="2. 计算"></a>2. 计算</h3><p>$a \div b \% c$ 时，假设存在 $p \times b ≡ 1 \pmod c$，则 $p$ 为 $b$ 的逆元。$a \div b \% c = a \times p \% c$。</p>
+<script type="math/tex; mode=display">a \div b = k \times c + r\\   a = k \times b \times c + b \times r\\   \because p \times b \equiv 1 \pmod c\\   \therefore a \times p \equiv k \times c + r \pmod c\\   \therefore p \times b + k \times c = 1</script><p>   相当于 $b,c$ 已知，则可以通过<strong>扩展欧几里得算法</strong>求逆元，但需要 $\gcd (b,c) = 1$ 时才有解。时间复杂度 $O(n \log n)$。</p>
+   <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">inv</span> <span class="params">(<span class="type">int</span> b,<span class="type">int</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> x,y;</span><br><span class="line">    <span class="built_in">exgcd</span> (b,c,x,y);</span><br><span class="line">    <span class="keyword">return</span> (x % c + c) % c;<span class="comment">//化成正数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>   当 $c$ 为质数时，逆元可以表示为 $b^{c - 2} \% c$，直接可以使用快速幂求解。</p>
+<script type="math/tex; mode=display">\because c \ 为质数\\   \therefore \gcd (b,c) = 1\\   \therefore b^{\phi(c)} \bmod c = 1\\   \therefore b \times b^{\phi(c) - 1} = 1\\   则逆元\ p= b^{\phi(c) - 1} = b^{c - 1 - 1} = b^{c - 2}</script><h3 id="3-线性求逆元"><a href="#3-线性求逆元" class="headerlink" title="3. 线性求逆元"></a>3. 线性求逆元</h3><p>时间复杂度为 $O(n)$。</p>
+<script type="math/tex; mode=display">令\ p\ 是质数，则有:\ inv_i = (p - \dfrac{p}{i}) \times inv_{p \% i} \bmod p。\\   \\   令\ t = \dfrac{p}{i},k = p \% i，则：\\   t \times i + k \equiv 0 \pmod p\\   -t \times i \equiv k \pmod p\\   同时除以\ i \times k\ 得：\\   -t \times inv_k \equiv intv_i \pmod p</script><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span> <span class="params">(<span class="type">int</span> n,<span class="type">int</span> mod)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    inv[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>;i &lt;= n;++i) inv[i] = (p - p / i) * inv[p % i] % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-无法求逆元的转化"><a href="#4-无法求逆元的转化" class="headerlink" title="4. 无法求逆元的转化"></a>4. 无法求逆元的转化</h3><script type="math/tex; mode=display">\dfrac{a}{b} \bmod m = \dfrac{a \bmod (b \times m)}{b}\\   \\   \dfrac{a}{b} = k \times m + x\ (x < m)\\   a = k \times b \times m + b \times x\\   a \bmod (b \times m) = b \times x\\   \frac{a \bmod (b \times m)}{b} = x</script><h2 id="中国剩余定理"><a href="#中国剩余定理" class="headerlink" title="中国剩余定理"></a>中国剩余定理</h2><p>求解以下方程：</p>
+<script type="math/tex; mode=display">\forall m_{i \mid 1 \le i \le n},\gcd (m_i,m_{i + j}) = 1\ (1 \le j \le n - i)\\\begin{cases}x \equiv a_1 \pmod {m_1}\\x \equiv a_2 \pmod {m_2}\\\cdots\\x \equiv a_n \pmod {m_n}\\\end{cases}</script><p>构造答案，设</p>
+<script type="math/tex; mode=display">\begin{aligned}M &= \prod_{i = 1}^n m_i, \quad M_i = \frac{M}{m_i} \\s_i &: \; M_i \times s_i \equiv 1 \pmod {m_i} \\\because &\; M_i = \frac{M}{m_i} \\\therefore &\; M_i \times s_i \bmod m_j = 0 \quad (1 \le j \le n,\ j \ne i) \\x &= \sum_{i = 1}^n a_i \times M_i \times s_i \\\text{通解为} &\; x + k \times M\end{aligned}</script><p>所以直接通过 $n$ 次 $\texttt{exgcd}$ 求出 $s_i$，最后合并即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">CRT</span> <span class="params">(<span class="type">int</span> n,<span class="type">int</span> a[],<span class="type">int</span> m[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll M = <span class="number">1</span>,ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;++i) M *= m[i];</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        ll x = <span class="number">0</span>,y = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">exgcd</span> (M / m[i],m[i],x,y);</span><br><span class="line">        x = (x % m[i] + m[i]) % m[i];</span><br><span class="line">        ans += M / m[i] * x * a[i];</span><br><span class="line">        ans %= M;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="整除分块"><a href="#整除分块" class="headerlink" title="整除分块"></a>整除分块</h2><p>求下列式子的值。</p>
+<script type="math/tex; mode=display">\sum _{i = 1} ^ n \lfloor\dfrac{n}{i}\rfloor \ (1 \le n \le 10^9)</script><p>若用朴素的算法，时间复杂度为 $O(n)$，显然会 $\texttt{TLE}$。那么再给出一种 $O(\sqrt n)$ 的做法。<br>先给出所有的 $\lfloor\dfrac{n}{i}\rfloor$ 的取值不会超过 $\sqrt{n}$ 种的证明：</p>
+<script type="math/tex; mode=display">当 \ i \le \sqrt{n} 时，显然取值不超过 \sqrt{n};\\ 当 i > \sqrt{n} 时，\lfloor\dfrac{n}{i}\rfloor < \sqrt{n}，故取值不超过 \sqrt{n}。\\ 综上，命题成立。</script><p>设一段取值均为 $\lfloor\dfrac{n}{i}\rfloor$ 的区间的左、右端点分别为 $L,R$。</p>
+<script type="math/tex; mode=display">\because \lfloor\dfrac{n}{R}\rfloor \le \frac{n}{R}\\\therefore R \le \dfrac{n}{\lfloor\dfrac{n}{L}\rfloor}\\\therefore R_{\max} = \biggl\lfloor{\dfrac{n}{\lfloor{\dfrac{n}{L}\rfloor}}\biggr\rfloor}</script><p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> L = <span class="number">1</span>,R;L &lt;= n;L = R + <span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">    R = n / (n / L);</span><br><span class="line">    ans += <span class="number">1ll</span> * (R - L * <span class="number">1</span>) * (n / L);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="组合数学基础"><a href="#组合数学基础" class="headerlink" title="组合数学基础"></a>组合数学基础</h2><h3 id="1-组合数的两种表示方法"><a href="#1-组合数的两种表示方法" class="headerlink" title="1. 组合数的两种表示方法"></a>1. 组合数的两种表示方法</h3><p>   对于递推公式，是对于第 $n$ 项是否选择得出的。</p>
+<script type="math/tex; mode=display">\tbinom{n}{m} = C^m_n = \dfrac{n \times (n - 1) \times (n - 2) \cdots \times (n - m + 1)}    {m!} = \dfrac{n!}{m!(n - m)!}\\\tbinom{n}{m} = \tbinom{n - 1}{m - 1} + \tbinom{n - 1}{m}</script><h3 id="2-组合数的预处理"><a href="#2-组合数的预处理" class="headerlink" title="2. 组合数的预处理"></a>2. 组合数的预处理</h3>   <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    c[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>;i &lt; n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        c[i][i] = c[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>;j &lt; i;++j)</span><br><span class="line">        &#123;</span><br><span class="line">            c[i][j] = c[i - <span class="number">1</span>][j] + c[i - <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line">            c[i][j] %= MOD;</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-组合数的变形"><a href="#3-组合数的变形" class="headerlink" title="3. 组合数的变形"></a>3. 组合数的变形</h3><script type="math/tex; mode=display">(1)\ k \times \tbinom{n}{k} = k \times \dfrac{n!}{k!(n - k)!}\\= k \times n \times \dfrac{(n - 1)!}{k!(n - k)!} = n \times \dfrac{(n - 1)!}{(k - 1)!(n - 1 - (k - 1))!} = n \times \tbinom{n - 1}{k - 1}\\ (2)\ \sum_{i = 1}^{n}i \times \tbinom{n}{i} = \sum_{i = 1}^{n} n \times \tbinom{n - 1}{i - 1} = n \times 2^{n - 1}\\(3)\ \sum_{i = 1}^{n} i^2 \times \tbinom{n}{i} = n \times (n + 1) \times 2^{n - 2}\\(4)\ \sum_{i = 0}^{n} \tbinom{n}{i}^2 = \tbinom{2n}{n}</script><p>其中的$(3)$可以转化为模型。等号左边为班级中的 $n$ 个人选择候选人，然后从候选人中选一个班长与副班长，同一个人可以身兼两职，求最终方案数；等号右边为身兼两职与两个人分别当选的两种情况，有加法原理相加得到，即：</p>
+<script type="math/tex; mode=display">n \times 2^{n - 1} + n \times (n - 1) \times 2^{n - 2} = n \times (n + 1) \times 2^{n - 2}</script><p>$(4)$ 也一样可以转化为模型。等号右边为班级中有 $n$ 个男生和 $n$ 个女生，从中选 $n$ 人；等号左边相当于等价的，男生选 $i$ 个，女生选 $n - i$ 个，则有<br>：</p>
+<script type="math/tex; mode=display">\sum_{i = 0}^{n} \tbinom{n}{i} \times \tbinom{n}{n - i} = \sum_{i = 0}^{n} \tbinom{n}{i}^2</script><blockquote>
+<p>【摘自 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/article/8g58f61g">CF2077C Binary Subsequence Value Sum题解</a>】</p>
+<ul>
+<li><p>证明 $\sum_{i=0}^nC_n^ii=n2^{n-1}$<br>$i=C_i^1$，则原式等于 $\sum_{i=0}^nC_n^iC_i^1$，考虑其组合意义，即先从 $n$ 个元素中选若干个，再从若干个元素里选出一个的方案数。那我们先选这一个，有 $n$ 种方案，再从剩下 $n-1$ 个元素中选出若干个，有 $2^{n-1}$ 种方案，所以是 $n2^{n-1}$。</p>
+</li>
+<li><p>证明 $\sum_{i=0}^nC_n^ii^2=n(n+1)2^{n-2}$<br>考虑 $i^2=i+i(i-1)=i+2\times\frac{i(i-1)}{2}=C_i^1+2C_i^2$，则原式等于 $\sum_{i=0}^nC_n^iC_i^1+2C_n^iC_i^2$，等于 $n2^{n-1}+2\sum_{i=0}^nC_n^iC_i^2$，则我们只需解决 $\sum_{i=0}^nC_n^iC_i^2$。<br>\<br>考虑组合意义，即从 $n$ 个元素里选出若干个，再从若干个元素里选出两个的方案数。那我们先选出这两个，有 $\frac{n(n-1)}{2}$ 种方案，然后再从剩下的元素中选出若干个，有 $2^{n-2}$ 种方案，所以有 $n(n-1)2^{n-3}$ 种方案。</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="二项式定理"><a href="#二项式定理" class="headerlink" title="二项式定理"></a>二项式定理</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1. 概念"></a>1. 概念</h3><p>对于每一个 $x + y$ 的选择，则选 $i$ 个 $x$，剩余均选择 $y$ 时，答案为：</p>
+<script type="math/tex; mode=display">C^i_n x^i y^{n - i} \ (1 \le n \le i)</script><p>因此有：</p>
+<script type="math/tex; mode=display">(x + y)^n = C_n^0 x^n y^0 + C^1_n x^{y - 1} y + C^2_n x^{n - 2} y^2 + \cdots + C^n_n x^0 y^n\\= \sum_{k = 0}^n \tbinom{n}{k} x^{n - k}y^k</script><h3 id="2-二项式定理的变形"><a href="#2-二项式定理的变形" class="headerlink" title="2. 二项式定理的变形"></a>2. 二项式定理的变形</h3><script type="math/tex; mode=display">(1)\ (x + y)^n = \sum_{k = 0}^n \tbinom{n}{n - k} x^{n - k}y^k\\   (2)\ (x + y)^n = \sum_{k = 0}^n \tbinom{n}{n - k} x^k y^{n - k}\\   (3)\ (x + y)^n = \sum_{k = 0}^n \tbinom{n}{k} x^k y^{n - k}\\   (4)\ 当\ y = 1\ 时，(1 + x)^n = \sum_{k = 0}^n \tbinom{n}{k} x^k = \sum_{k = 0}^n \tbinom{n}{n - k} x^k\\   (5)\ 当\ x = 2,y = 1\ 时，(x + y)^n = \sum_{i = 0}^{n} \tbinom{n}{i}2^i = 3^n\\   (6)\ 当\ x = y = 1\ 时，(x - y)^n = \sum_{i = 0}^{n} \tbinom{n}{i}2^i \times (-1)^i= 0\\   (7)\ 当\ x = y = 1\ 时，(x + y)^n = \sum_{i = 0}^{n} \tbinom{n}{i} = 2^n\\   (8)\ \tbinom{n}{0} + \tbinom{n}{2} + \cdots = \tbinom{n}{1} + \tbinom{n}{3} + \cdots = 2^{n - 1}</script><h2 id="隔板法"><a href="#隔板法" class="headerlink" title="隔板法"></a>隔板法</h2><h3 id="1-题意"><a href="#1-题意" class="headerlink" title="1. 题意"></a>1. 题意</h3><p>   把 $n$ 个相同的小球，放到 $m$ 个不同的盒子中，盒子不能为空，求方案数。或者求 $x_1 + x_2 + \cdots + x_m = n$ 的正整数解。</p>
+<p>   <strong>解法</strong> 相当于在 $n - 1$ 个间隔中选择 $m - 1$ 个间隔，将其分为 $m$ 份。故为：</p>
+<script type="math/tex; mode=display">\tbinom{n - 1}{m - 1}</script><h3 id="2-变式"><a href="#2-变式" class="headerlink" title="2. 变式"></a>2. 变式</h3><p>   把 $n$ 个相同的小球，放到 $m$ 个不同的盒子中，盒子可以为空，求方案数。或者求 $x_1 + x_2 + \cdots + x_m = n$ 的非负整数解。</p>
+<p>   <strong>解法</strong> 相当于在先在每个盒子中放入 $1$ 个球，然后求 $n + m$ 个相同的小球放入 $m$ 个不同的盒子的方案数，盒子不能为空。故为：</p>
+<script type="math/tex; mode=display">\tbinom{n + m - 1}{m - 1}</script><h2 id="错位排列"><a href="#错位排列" class="headerlink" title="错位排列"></a>错位排列</h2><script type="math/tex; mode=display">\forall i \mid 1 \le i \le n,f_i != i</script><p>递推公式为：</p>
+<script type="math/tex; mode=display">f_1 = 0\\f_2 = 1\\f_i = (i - 1) \times (f_{i - 1} + f_{i - 2})\ (i > 2)</script><p>对于第 $i$ 项，可以在前 $i - 1$ 个数中选一个数与第 $i$ 个数替换，共 $i - 1$ 中，然后问题变为求 $(i - 1) \times (f_{i - 2})$。也可以将前 $i - 1$ 个数中的一个数放在前 i - 1 个位置中符合条件的某一个位置，相当于求 $(i - 1) \times f_{i - 1}$ 这一新的错排。</p>
+<h2 id="圆排列"><a href="#圆排列" class="headerlink" title="圆排列"></a>圆排列</h2><p>原来每组排列都有 $n$ 种排列等价，故方案数为：</p>
+<script type="math/tex; mode=display">\frac{n!}{n}</script><h2 id="多重集合的排列"><a href="#多重集合的排列" class="headerlink" title="多重集合的排列"></a>多重集合的排列</h2><ol>
+<li>集合中有 $k$ 种不同类型的对象，每种数量均为无限，从中选 $n$ 个，排列的方案数为：</li>
+</ol>
+<script type="math/tex; mode=display">k^n</script><ol>
+<li>集合中有 $k$ 种不同类型的对象，每种数量分别为 $n_1$ 至 $n_k$，从中选 $n$ 个。相当于选出 $n_1$ 个位置放第 $1$ 种，选出 $n_2$ 个位置放第 $2$ 种，以此类推。方案数为：</li>
+</ol>
+<script type="math/tex; mode=display">\tbinom{n}{n_1} \times \tbinom{n - n_1}{n_2} \times \cdots \times \tbinom{n - n_1 - n_2 - \cdots - n_{k - 1}}{n_k}= \dfrac{n!}{n_1!n_2!\cdots n_k!}</script><h2 id="多重集合的组合"><a href="#多重集合的组合" class="headerlink" title="多重集合的组合"></a>多重集合的组合</h2><p>集合中有 $k$ 种不同类型的对象，每种数量均为无限，从中选 $n$ 个。等价于 $k$ 个相同的球放到 $n$ 个不同的盒子中，盒子可以为空。或者等价于选 $k$ 次球，每次都可以选 $n$ 种球，且选择不分先后。组合的方案数为：</p>
+<script type="math/tex; mode=display">\tbinom{n + k - 1}{k} = \tbinom{n + k - 1}{n - 1}</script><h2 id="康托展开"><a href="#康托展开" class="headerlink" title="康托展开"></a>康托展开</h2><h3 id="1-计算排列的排名"><a href="#1-计算排列的排名" class="headerlink" title="1. 计算排列的排名"></a>1. 计算排列的排名</h3><p>设 $a_i$ 表示 $i$ 位置右边比它小的数的个数，则该排列之前的排列总数为：</p>
+<script type="math/tex; mode=display">x = a_1 (n - 1)! + a_2 (n - 2)! + \cdots + a_n0!</script><p>倘若 $i$ 位置上的数比该数小，则在它右边的数可以随意放置，若 $i$ 位置上的数等于该数，则继续判断 $i + 1$ 位置的数的情况，以此类推。因此可以由加法原理得可知该排列之前的排列总数。所以求排名的公式为：</p>
+<script type="math/tex; mode=display">ans = 1 + \sum_{i = 1}^n a_i \times (n - i)!</script><h3 id="2-计算特定排名的排列"><a href="#2-计算特定排名的排列" class="headerlink" title="2. 计算特定排名的排列"></a>2. 计算特定排名的排列</h3><p>即康托展开的逆展开。</p>
+<p>利用康托展开的公式，类似进制转换的方式去确定从高到底的每一位。若排列长度为 $x$，求编号为 $0$ 开始的，编号为 $k$ 的排列。方法如下：$p = \frac{k}{(x - 1)!}$，则说明第一位右边有 $p$ 个数比它小，所以最高位为 $p + 1$，然后取余数重复操作，知道确定排列上的所有数字。</p>
+<h3 id="3-求下一个排列"><a href="#3-求下一个排列" class="headerlink" title="3. 求下一个排列"></a>3. 求下一个排列</h3><p>对于一个排列：$a_1,a_2,\cdots,a_n$。从后往前找到第一个 $p_i &lt; p_{i + 1}$ 的位置，从后往前找到第一个 $p_j  &lt; p_i$ 的位置。最后交换 $p_i,p_j$ 并颠倒 $i$ 位置以后的所有元素即可。</p>
+<h2 id="斯特林数"><a href="#斯特林数" class="headerlink" title="斯特林数"></a>斯特林数</h2><h3 id="1-第一类斯特林数"><a href="#1-第一类斯特林数" class="headerlink" title="1. 第一类斯特林数"></a>1. 第一类斯特林数</h3><p>   求将 $n$ 个不同的物体摆成k个非空环的方案数。采用动态规划的做法，对于第 $i$ 个物体，可以任取一个环加入，也可以构造一个新环，故有 $dp_{n,k} = (n - 1)dp_{n - 1,k} + dp_{n - 1,k - 1}$。（当然有初始化  $dp_{0,0} = dp_{1,1} = 1$）</p>
+<h3 id="2-第二类斯特林数"><a href="#2-第二类斯特林数" class="headerlink" title="2.第二类斯特林数"></a>2.第二类斯特林数</h3><p>   求将 $n$ 个不同的物体分成 $k$ 个非空集合的方案数。采用动态规划的做法，对于第 $i$ 个物体，可以任取一个集合加入，也可以放入一个新集合中，故有 $k \times dp_{n - 1,k} + dp_{n - 1,k - 1}$。（当然有初始化 $dp_{i,i} = dp_{i,1} = 1$）</p>
+<h2 id="卡特兰数"><a href="#卡特兰数" class="headerlink" title="卡特兰数"></a>卡特兰数</h2><p>题目描述，假如有一个 $n\times n$ 的网络，从左下角 $A$ 点走到右上角 $B$ 点且不穿越对角线的方案数。通过几何方法证明，答案为：</p>
+<script type="math/tex; mode=display">\text{Catalan}(n)= \tbinom{2n}{n} - \tbinom{2n}{n + 1}= \frac{1}{n + 1}\tbinom{2n}{n}= \frac{1}{n + 1}\sum_{i = 0}^{n}\tbinom{n}{i}^2</script><p>其它的表达形式还有：</p>
+<script type="math/tex; mode=display">C(n + 1) = \sum_{i = 0}^n C(i)\times C(n - i),C(0) = 1\\C(n + 1) = \frac{2(2n + 1)}{n + 2} C(n),C(0) = 1</script><p>常见应用：</p>
+<ol>
+<li>合法的括号匹配</li>
+<li>$n$ 个节点二叉树的形态数</li>
+<li>入栈出栈的排列总数</li>
+<li>凸 $n+2$ 边形的分割</li>
+</ol>
+<h2 id="放球问题"><a href="#放球问题" class="headerlink" title="放球问题"></a>放球问题</h2><p>设 $dp_{i,j}$ 表示 $i$ 个小球放到 $j$ 个盒子的方案数。</p>
+<h3 id="1-球相同，盒相同，可为空。"><a href="#1-球相同，盒相同，可为空。" class="headerlink" title="1. 球相同，盒相同，可为空。"></a>1. 球相同，盒相同，可为空。</h3><p>则有：$dp_{i,j} = dp_{i,j - 1} + dp_{i - 1,j}$。</p>
+<h3 id="2-球相同，盒相同，不可为空。"><a href="#2-球相同，盒相同，不可为空。" class="headerlink" title="2. 球相同，盒相同，不可为空。"></a>2. 球相同，盒相同，不可为空。</h3><p>则有：$dp_{i,j} = dp_{i - j,j}$。</p>
+<h3 id="3-球不同，盒不同，可为空。"><a href="#3-球不同，盒不同，可为空。" class="headerlink" title="3. 球不同，盒不同，可为空。"></a>3. 球不同，盒不同，可为空。</h3><p>则有：$j^i$。</p>
+<h3 id="4-球不同，盒相同，不可为空。"><a href="#4-球不同，盒相同，不可为空。" class="headerlink" title="4. 球不同，盒相同，不可为空。"></a>4. 球不同，盒相同，不可为空。</h3><p>则有：$dp_{i,j} = dp_{i - 1,j} + dp_{i - 1,j - 1}$。</p>
+<h3 id="5-球不同，盒不同，不可为空。"><a href="#5-球不同，盒不同，不可为空。" class="headerlink" title="5. 球不同，盒不同，不可为空。"></a>5. 球不同，盒不同，不可为空。</h3><p>则有：$dp_{i,j} \times {j!}$。</p>
+<h3 id="6-球不同，盒相同，可为空。"><a href="#6-球不同，盒相同，可为空。" class="headerlink" title="6. 球不同，盒相同，可为空。"></a>6. 球不同，盒相同，可为空。</h3><p>枚举盒子数，则有：$dp_{i,j} = dp_{i - 1,j} + dp_{i - 1,j - 1}$。</p>
+<h3 id="7-球相同，盒不同，不可为空。"><a href="#7-球相同，盒不同，不可为空。" class="headerlink" title="7. 球相同，盒不同，不可为空。"></a>7. 球相同，盒不同，不可为空。</h3><p>隔板法，则有：$\tbinom{i - 1}{j - 1}$。</p>
+<h3 id="8-球相同，盒不同，可为空。"><a href="#8-球相同，盒不同，可为空。" class="headerlink" title="8. 球相同，盒不同，可为空。"></a>8. 球相同，盒不同，可为空。</h3><p>则有：$\tbinom{i + j - 1}{j - 1}$。</p>
+<h2 id="卢卡斯定理"><a href="#卢卡斯定理" class="headerlink" title="卢卡斯定理"></a>卢卡斯定理</h2><script type="math/tex; mode=display">n = (a_0a_1\cdots a_k)_p\\m = (b_0b_1\cdots b_k)_p\\\tbinom{n}{m} \equiv \Pi_{i = 0}^{k} \tbinom{a_i}{b_i} \pmod p\\\tbinom{n}{m} = \tbinom{n \bmod p}{m \bmod p} \times \tbinom{\lfloor\frac{n}{p}\rfloor}{\lfloor\frac{m}{p}\rfloor} \bmod p</script><p>证明略。代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">calc</span> <span class="params">(<span class="type">int</span> n,<span class="type">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; m) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1ll</span> * fac[n] * <span class="built_in">inv</span>(fac[m]) % MOD * <span class="built_in">inc</span> (fac[n - m]) % MOD;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">lucas</span> <span class="params">(<span class="type">int</span> m,<span class="type">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!m) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1ll</span> * <span class="built_in">lucas</span> (n / MOD,m / MOD) * <span class="built_in">clac</span> (n % MOD,m % MOD) % MOD;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></article>
+<div class="article-footer">
+    <section id="license">
+      <div class="header"><span>License</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+
+    <section id="share">
+      <div class="header"><span>Share</span></div>
+      <div class="body">
+        <div class="link"><input class="copy-area" readonly="true" id="copy-link" value="http://example.com/2021/11/19/Math/" /></div>
+        <div class="social-wrap dis-select"><a class="social share-item wechat" onclick="util.toggle(&quot;qrcode-wechat&quot;)"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/b32ef3da1162a.svg" /></a><a class="social share-item weibo" target="_blank" rel="external nofollow noopener noreferrer" href="https://service.weibo.com/share/share.php?url=http://example.com/2021/11/19/Math/&title=初级数学 学习笔记 - SUNCHAOYI&pics=/img/programming.png&summary=数论基本概念1. 整除法n = ak + r(0 \le r < a) \to k = \lfloor \frac{n}{a} \rfloor2. 算数基本定理$p_i$ 为素数，且 $p_i &lt; p_{i + 1}$，则有：
+..."><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/80c07e4dbb303.svg" /></a><a class="social share-item email" href="mailto:?subject=初级数学 学习笔记 - SUNCHAOYI&amp;body=http://example.com/2021/11/19/Math/"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/a1b00e20f425d.svg" /></a><a class="social share-item link" onclick="util.copy(&quot;copy-link&quot;, &quot;Copied!&quot;)"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/8411ed322ced6.svg" /></a></div>
+        
+        <div class="qrcode" id="qrcode-wechat" style="opacity:0;height:0">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=http://example.com/2021/11/19/Math/"/>
+        </div>
+        
+      </div>
+    </section>
+    </div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">Newer</div><a href="/2022/01/22/WC2022/">WC 2022 学习笔记</a></div><div class="item" id="next"><div class="note">Older</div><a href="/2021/11/06/NOIP2021/">2021 NOIP 备赛记</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">Chaoyi, Sun</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">On This Page</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E8%AE%BA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">数论基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%95%B4%E9%99%A4%E6%B3%95"><span class="toc-text">1. 整除法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%AE%97%E6%95%B0%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86"><span class="toc-text">2. 算数基本定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E4%B8%8E%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0"><span class="toc-text">3. 最大公约数与最小公倍数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B1%82%E4%B8%80%E4%B8%AA%E6%95%B0%E7%9A%84%E7%BA%A6%E6%95%B0%E4%B8%AA%E6%95%B0"><span class="toc-text">4. 求一个数的约数个数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B4%A0%E6%95%B0%E7%AD%9B%E6%B3%95"><span class="toc-text">素数筛法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9C%B4%E7%B4%A0%E7%AD%9B%E6%B3%95"><span class="toc-text">1. 朴素筛法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B8%B8%E6%95%B0%E4%BC%98%E5%8C%96"><span class="toc-text">2. 常数优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%BA%BF%E6%80%A7%E7%AD%9B"><span class="toc-text">3. 线性筛</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95"><span class="toc-text">欧几里得算法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%BE%97%E8%BD%AC%E7%9B%B8%E5%87%8F"><span class="toc-text">1. 辗转相减</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4"><span class="toc-text">2. 辗转相除</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95"><span class="toc-text">扩展欧几里得算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0"><span class="toc-text">欧拉函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%A7%AF%E6%80%A7%E5%87%BD%E6%95%B0"><span class="toc-text">2. 积性函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%AE%A1%E7%AE%97%E9%80%9A%E5%BC%8F"><span class="toc-text">3. 计算通式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E4%BB%A3%E7%A0%81"><span class="toc-text">5. 代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86"><span class="toc-text">欧拉定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83"><span class="toc-text">乘法逆元</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86"><span class="toc-text">1. 费马小定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%AE%A1%E7%AE%97"><span class="toc-text">2. 计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%BA%BF%E6%80%A7%E6%B1%82%E9%80%86%E5%85%83"><span class="toc-text">3. 线性求逆元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%97%A0%E6%B3%95%E6%B1%82%E9%80%86%E5%85%83%E7%9A%84%E8%BD%AC%E5%8C%96"><span class="toc-text">4. 无法求逆元的转化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86"><span class="toc-text">中国剩余定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B4%E9%99%A4%E5%88%86%E5%9D%97"><span class="toc-text">整除分块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-text">组合数学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%BB%84%E5%90%88%E6%95%B0%E7%9A%84%E4%B8%A4%E7%A7%8D%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="toc-text">1. 组合数的两种表示方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BB%84%E5%90%88%E6%95%B0%E7%9A%84%E9%A2%84%E5%A4%84%E7%90%86"><span class="toc-text">2. 组合数的预处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%BB%84%E5%90%88%E6%95%B0%E7%9A%84%E5%8F%98%E5%BD%A2"><span class="toc-text">3. 组合数的变形</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86"><span class="toc-text">二项式定理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%A6%82%E5%BF%B5"><span class="toc-text">1. 概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86%E7%9A%84%E5%8F%98%E5%BD%A2"><span class="toc-text">2. 二项式定理的变形</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%94%E6%9D%BF%E6%B3%95"><span class="toc-text">隔板法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%A2%98%E6%84%8F"><span class="toc-text">1. 题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8F%98%E5%BC%8F"><span class="toc-text">2. 变式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E4%BD%8D%E6%8E%92%E5%88%97"><span class="toc-text">错位排列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%86%E6%8E%92%E5%88%97"><span class="toc-text">圆排列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E9%87%8D%E9%9B%86%E5%90%88%E7%9A%84%E6%8E%92%E5%88%97"><span class="toc-text">多重集合的排列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E9%87%8D%E9%9B%86%E5%90%88%E7%9A%84%E7%BB%84%E5%90%88"><span class="toc-text">多重集合的组合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80"><span class="toc-text">康托展开</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E6%8E%92%E5%88%97%E7%9A%84%E6%8E%92%E5%90%8D"><span class="toc-text">1. 计算排列的排名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%AE%A1%E7%AE%97%E7%89%B9%E5%AE%9A%E6%8E%92%E5%90%8D%E7%9A%84%E6%8E%92%E5%88%97"><span class="toc-text">2. 计算特定排名的排列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%B1%82%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%8E%92%E5%88%97"><span class="toc-text">3. 求下一个排列</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0"><span class="toc-text">斯特林数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%AC%AC%E4%B8%80%E7%B1%BB%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0"><span class="toc-text">1. 第一类斯特林数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%AC%AC%E4%BA%8C%E7%B1%BB%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0"><span class="toc-text">2.第二类斯特林数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0"><span class="toc-text">卡特兰数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%BE%E7%90%83%E9%97%AE%E9%A2%98"><span class="toc-text">放球问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%90%83%E7%9B%B8%E5%90%8C%EF%BC%8C%E7%9B%92%E7%9B%B8%E5%90%8C%EF%BC%8C%E5%8F%AF%E4%B8%BA%E7%A9%BA%E3%80%82"><span class="toc-text">1. 球相同，盒相同，可为空。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%90%83%E7%9B%B8%E5%90%8C%EF%BC%8C%E7%9B%92%E7%9B%B8%E5%90%8C%EF%BC%8C%E4%B8%8D%E5%8F%AF%E4%B8%BA%E7%A9%BA%E3%80%82"><span class="toc-text">2. 球相同，盒相同，不可为空。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%90%83%E4%B8%8D%E5%90%8C%EF%BC%8C%E7%9B%92%E4%B8%8D%E5%90%8C%EF%BC%8C%E5%8F%AF%E4%B8%BA%E7%A9%BA%E3%80%82"><span class="toc-text">3. 球不同，盒不同，可为空。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%90%83%E4%B8%8D%E5%90%8C%EF%BC%8C%E7%9B%92%E7%9B%B8%E5%90%8C%EF%BC%8C%E4%B8%8D%E5%8F%AF%E4%B8%BA%E7%A9%BA%E3%80%82"><span class="toc-text">4. 球不同，盒相同，不可为空。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E7%90%83%E4%B8%8D%E5%90%8C%EF%BC%8C%E7%9B%92%E4%B8%8D%E5%90%8C%EF%BC%8C%E4%B8%8D%E5%8F%AF%E4%B8%BA%E7%A9%BA%E3%80%82"><span class="toc-text">5. 球不同，盒不同，不可为空。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E7%90%83%E4%B8%8D%E5%90%8C%EF%BC%8C%E7%9B%92%E7%9B%B8%E5%90%8C%EF%BC%8C%E5%8F%AF%E4%B8%BA%E7%A9%BA%E3%80%82"><span class="toc-text">6. 球不同，盒相同，可为空。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E7%90%83%E7%9B%B8%E5%90%8C%EF%BC%8C%E7%9B%92%E4%B8%8D%E5%90%8C%EF%BC%8C%E4%B8%8D%E5%8F%AF%E4%B8%BA%E7%A9%BA%E3%80%82"><span class="toc-text">7. 球相同，盒不同，不可为空。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E7%90%83%E7%9B%B8%E5%90%8C%EF%BC%8C%E7%9B%92%E4%B8%8D%E5%90%8C%EF%BC%8C%E5%8F%AF%E4%B8%BA%E7%A9%BA%E3%80%82"><span class="toc-text">8. 球相同，盒不同，可为空。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%A2%E5%8D%A1%E6%96%AF%E5%AE%9A%E7%90%86"><span class="toc-text">卢卡斯定理</span></a></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>Scroll to Top</span></a></div></widget>
+</div></aside><div class='float-panel'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+
+
+<script type="text/javascript">
+  window.canonical = {"originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  const ctx = {
+    date_suffix: {
+      just: `Just`,
+      min: `minutes ago`,
+      hour: `hours ago`,
+      day: `days ago`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+    loading: `https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd`,
+  };
+  const deps = {
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
+    lazyload: `/%5Bobject%20Object%5D`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      const maxRetry = 3;
+      let retryCount = 0;
+
+      return new Promise((resolve, reject) => {
+        const load = () => {
+          utils.onLoading?.(el);
+
+          let timedOut = false;
+          const timeout = setTimeout(() => {
+            timedOut = true;
+            console.warn('[request] 超时:', url);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject('请求超时');
+            } else {
+              setTimeout(load, 1000);
+            }
+          }, 5000);
+
+          fetch(url).then(resp => {
+            if (timedOut) return;
+            clearTimeout(timeout);
+
+            if (!resp.ok) throw new Error('响应失败');
+            return resp;
+          }).then(data => {
+            if (timedOut) return;
+            utils.onLoadSuccess?.(el);
+            callback(data);
+            resolve(data);
+          }).catch(err => {
+            clearTimeout(timeout);
+            console.warn('[request] 错误:', err);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject(err);
+            } else {
+              setTimeout(load, 1000);
+            }
+          });
+        };
+
+        load();
+      });
+    },
+    requestWithoutLoading: (url, options = {}, maxRetry = 2, timeout = 5000) => {
+      return new Promise((resolve, reject) => {
+        let retryCount = 0;
+
+        const tryRequest = () => {
+          let timedOut = false;
+          const timer = setTimeout(() => {
+            timedOut = true;
+            if (++retryCount > maxRetry) reject('timeout');
+            else tryRequest();
+          }, timeout);
+
+          fetch(url, options)
+            .then(resp => {
+              clearTimeout(timer);
+              if (!resp.ok) throw new Error('bad response');
+              resolve(resp);
+            })
+            .catch(err => {
+              clearTimeout(timer);
+              if (++retryCount > maxRetry) reject(err);
+              else setTimeout(tryRequest, 500);
+            });
+        };
+
+        tryRequest();
+      });
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+<script async src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    callback_loaded: (el) => {
+      el.classList.add('loaded');
+      const wrapper = el.closest('.lazy-box');
+      const icon = wrapper?.querySelector('.lazy-icon');
+      if (icon) icon.remove();
+    }
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+
+  window.wrapLazyloadImages = (container) => {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+    if (!container) return;
+    
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => {
+      if (img.classList.contains('lazy')) return;
+
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lazy-box';
+
+      const newImg = img.cloneNode();
+      newImg.removeAttribute('src');
+      newImg.setAttribute('data-src', src);
+      newImg.classList.add('lazy');
+
+      const icon = document.createElement('div');
+      icon.className = 'lazy-icon';
+      if (def.loading) {
+        icon.style.backgroundImage = `url("${def.loading}")`;
+      }
+
+      wrapper.appendChild(newImg);
+      wrapper.appendChild(icon);
+
+      img.replaceWith(wrapper);
+    });
+
+    // 通知 LazyLoad 更新
+    if (window.lazyLoadInstance?.update) {
+      window.lazyLoadInstance.update();
+    }
+  }
+  
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.33.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    // applyThemeToGiscus(theme)
+  }
+
+  // FIXME: 这会导致无法使用 preferred_color_scheme 以外的主题
+  const applyThemeToGiscus = (theme) => {
+    // theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `Switched to Light Mode`,
+      dark: `Switched to Dark Mode`,
+      auto: `Switched to Auto Mode`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote.xaox.cc/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote.xaox.cc/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error), .with-fancybox .atk-content img:not([atk-emoticon])';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const memos = document.getElementsByClassName('ds-memos');
+    if (memos != undefined && memos.length > 0) {
+      needFancybox = true;
+    }
+    const fancybox = document.getElementsByClassName('with-fancybox');
+    if (fancybox != undefined && fancybox.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+
+<script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+  MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>

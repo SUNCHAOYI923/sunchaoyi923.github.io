@@ -1,0 +1,1181 @@
+
+<!DOCTYPE html><html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
+  
+  
+  <meta name="generator" content="Hexo 8.1.1">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin><link rel="preconnect" href="https://unpkg.com" crossorigin><link rel="preconnect" href="https://cdn.bootcdn.net" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  <title>WC 2022 学习笔记 - SUNCHAOYI</title>
+
+  
+    <meta name="description" content="$\texttt{Day 1 2022.01.22}$ 开幕式，好耶！  $\texttt{Day 2 2022.01.23}$  上午才知道课程都是二选一，选了个第二课堂听听。 前置 向量加减    \begin{cases} p &#x3D; (x_1,y_1),q &#x3D; (x_2,y_2)\\ p + q &#x3D; (x_1 + x_2,y_1 + y_2)\\ p - q &#x3D; (x_1 - x_2,y_1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WC 2022 学习笔记">
+<meta property="og:url" content="http://example.com/2022/01/22/WC2022/">
+<meta property="og:site_name" content="SUNCHAOYI">
+<meta property="og:description" content="$\texttt{Day 1 2022.01.22}$ 开幕式，好耶！  $\texttt{Day 2 2022.01.23}$  上午才知道课程都是二选一，选了个第二课堂听听。 前置 向量加减    \begin{cases} p &#x3D; (x_1,y_1),q &#x3D; (x_2,y_2)\\ p + q &#x3D; (x_1 + x_2,y_1 + y_2)\\ p - q &#x3D; (x_1 - x_2,y_1">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/u4fi7tjc.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/0bn4lx6h.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/047mq30j.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/vtvldf9o.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/qt81h9os.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/h5fmw1ew.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/li5qmq7j.png">
+<meta property="article:published_time" content="2022-01-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-18T13:44:59.071Z">
+<meta property="article:author" content="Chaoyi, Sun">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/image_hosting/u4fi7tjc.png">
+  
+  
+  
+  
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.33.1">
+
+
+  
+    <link rel="shortcut icon" href="/img/Favicon.gif">
+  
+
+  
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Chaoyi, Sun","sameAs":[]},"dateCreated":"2022-01-22T00:00:00+08:00","dateModified":"2026-01-18T21:44:59+08:00","datePublished":"2022-01-22T00:00:00+08:00","description":"","headline":"WC 2022 学习笔记","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/01/22/WC2022/"},"publisher":{"@type":"Organization","name":"Chaoyi, Sun","sameAs":[]},"url":"http://example.com/2022/01/22/WC2022/","thumbnailUrl":"/img/programming.png","image":1}</script>
+  <link rel="shortcut icon" href="/img/Avatar.jpg"><meta name="theme-color" content="#f8f8f8"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" media="all" />
+</head>
+<body>
+
+<div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><div class="icon"><img no-lazy class="icon" src="/img/Avatar.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><a class="title" href="/"><div class="main">ChaoWenYishi</div><div class="sub normal cap">Life & Academy</div><div class="sub hover cap" style="opacity:0"> Designed by SUNCHAOYI</div></a></div></header>
+
+<div class="nav-area">
+
+<nav class="menu dis-select"><a class="nav-item" title="Blog" href="/" style="color:#1BCDFC"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5.879 2.879C5 3.757 5 5.172 5 8v8c0 2.828 0 4.243.879 5.121C6.757 22 8.172 22 11 22h2c2.828 0 4.243 0 5.121-.879C19 20.243 19 18.828 19 16V8c0-2.828 0-4.243-.879-5.121C17.243 2 15.828 2 13 2h-2c-2.828 0-4.243 0-5.121.879M8.25 17a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75M9 12.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5zM8.25 9A.75.75 0 0 1 9 8.25h6a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 8.25 9" clip-rule="evenodd"/><path fill="currentColor" d="M5.235 4.058C5 4.941 5 6.177 5 8v8c0 1.823 0 3.058.235 3.942L5 19.924c-.975-.096-1.631-.313-2.121-.803C2 18.243 2 16.828 2 14v-4c0-2.829 0-4.243.879-5.121c.49-.49 1.146-.707 2.121-.803zm13.53 15.884C19 19.058 19 17.822 19 16V8c0-1.823 0-3.059-.235-3.942l.235.018c.975.096 1.631.313 2.121.803C22 5.757 22 7.17 22 9.999v4c0 2.83 0 4.243-.879 5.122c-.49.49-1.146.707-2.121.803z" opacity=".5"/></svg></a><a class="nav-item active" title="Column" href="/topic/" style="color:#3DC550"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M14.25 4.48v3.057c0 .111 0 .27.02.406a.936.936 0 0 0 .445.683a.96.96 0 0 0 .783.072c.13-.04.272-.108.378-.159L17 8.005l1.124.534c.106.05.248.119.378.16a.958.958 0 0 0 .783-.073a.936.936 0 0 0 .444-.683c.021-.136.021-.295.021-.406V3.031c.113-.005.224-.01.332-.013C21.154 2.98 22 3.86 22 4.933v11.21c0 1.112-.906 2.01-2.015 2.08c-.97.06-2.108.179-2.985.41c-1.082.286-1.99 1.068-3.373 1.436c-.626.167-1.324.257-1.627.323V5.174c.32-.079 1.382-.203 1.674-.371c.184-.107.377-.216.576-.323m5.478 8.338a.75.75 0 0 1-.546.91l-4 1a.75.75 0 0 1-.364-1.456l4-1a.75.75 0 0 1 .91.546" clip-rule="evenodd"/><path fill="currentColor" d="M18.25 3.151c-.62.073-1.23.18-1.75.336a8.2 8.2 0 0 0-.75.27v3.182l.75-.356l.008-.005a1.13 1.13 0 0 1 .492-.13c.047 0 .094.004.138.01c.175.029.315.1.354.12l.009.005l.749.356V3.647z"/><path fill="currentColor" d="M12 5.214c-.334-.064-1.057-.161-1.718-.339C8.938 4.515 8.05 3.765 7 3.487c-.887-.234-2.041-.352-3.018-.412C2.886 3.007 2 3.9 2 4.998v11.146c0 1.11.906 2.01 2.015 2.079c.97.06 2.108.179 2.985.41c.486.129 1.216.431 1.873.726c1.005.451 2.052.797 3.127 1.034z" opacity=".5"/><path fill="currentColor" d="M4.273 12.818a.75.75 0 0 1 .91-.545l4 1a.75.75 0 1 1-.365 1.455l-4-1a.75.75 0 0 1-.545-.91m.909-4.545a.75.75 0 1 0-.364 1.455l4 1a.75.75 0 0 0 .364-1.455z"/></svg></a><a class="nav-item" title="To be Continued" href="/explore/" style="color:#FA6400"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M20 12a8 8 0 1 1-16 0a8 8 0 0 1 16 0" opacity=".5"/><path fill="currentColor" d="M17.712 5.453c1.047-.193 2.006-.259 2.797-.152c.77.103 1.536.393 1.956 1.064c.446.714.312 1.542-.012 2.258c-.33.728-.918 1.499-1.672 2.268c-1.516 1.547-3.836 3.226-6.597 4.697c-2.763 1.472-5.495 2.484-7.694 2.92c-1.095.217-2.098.299-2.923.201c-.8-.095-1.6-.383-2.032-1.075c-.47-.752-.296-1.63.07-2.379c.375-.768 1.032-1.586 1.872-2.403L4 12.416c0 .219.083.71.168 1.146c.045.23.09.444.123.596c-.652.666-1.098 1.263-1.339 1.756c-.277.567-.208.825-.145.925c.072.116.305.305.937.38c.609.073 1.44.018 2.455-.183c2.02-.4 4.613-1.351 7.28-2.772c2.667-1.42 4.85-3.015 6.23-4.423c.694-.707 1.15-1.334 1.377-1.836c.233-.515.167-.75.107-.844c-.07-.112-.289-.294-.883-.374c-.542-.072-1.272-.041-2.163.112L16.87 5.656c.338-.101.658-.17.842-.203"/></svg></a><a class="nav-item" title="To be Continued" href="/friends/" style="color:#F44336"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m13.629 20.472l-.542.916c-.483.816-1.69.816-2.174 0l-.542-.916c-.42-.71-.63-1.066-.968-1.262c-.338-.197-.763-.204-1.613-.219c-1.256-.021-2.043-.098-2.703-.372a5 5 0 0 1-2.706-2.706C2 14.995 2 13.83 2 11.5v-1c0-3.273 0-4.91.737-6.112a5 5 0 0 1 1.65-1.651C5.59 2 7.228 2 10.5 2h3c3.273 0 4.91 0 6.113.737a5 5 0 0 1 1.65 1.65C22 5.59 22 7.228 22 10.5v1c0 2.33 0 3.495-.38 4.413a5 5 0 0 1-2.707 2.706c-.66.274-1.447.35-2.703.372c-.85.015-1.275.022-1.613.219c-.338.196-.548.551-.968 1.262" opacity=".5"/><path fill="currentColor" d="M10.99 14.308c-1.327-.978-3.49-2.84-3.49-4.593c0-2.677 2.475-3.677 4.5-1.609c2.025-2.068 4.5-1.068 4.5 1.609c0 1.752-2.163 3.615-3.49 4.593c-.454.335-.681.502-1.01.502c-.329 0-.556-.167-1.01-.502"/></svg></a></nav>
+</div>
+<div class="widgets">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="Search"></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div>
+
+<widget class="widget-wrapper related post-list"><div class="widget-header dis-select"><span class="name">Topic: Programming Contest</span></div><div class="widget-body"><a class="item" href="/2025/12/02/CCPC%20Chongqing25/"><span class="title">2025 CCPC 重庆站</span></a><a class="item" href="/2025/11/26/CF2110F/"><span class="title">题解：CF2110F Faculty</span></a><a class="item" href="/2025/11/24/ICPC%20Nanjing25/"><span class="title">2025 ICPC 南京站</span></a><a class="item" href="/2025/11/05/ICPC%20Wuhan25/"><span class="title">2025 ICPC 武汉站</span></a><a class="item" href="/2025/09/19/CF2143E/"><span class="title">题解：CF2143E Make Good</span></a><a class="item" href="/2025/09/16/CF2144E/"><span class="title">题解：CF2144E Looking at Towers</span></a><a class="item" href="/2025/09/10/CF2140E/"><span class="title">题解：CF2140E2 Prime Gaming</span></a><a class="item" href="/2025/09/08/CF2134E/"><span class="title">题解：CF2134E Power Boxes</span></a><a class="item" href="/2025/08/07/CCPC%20CQ24%20Finite%20Decimal/"><span class="title">CCPC 2024 重庆站 有限小数</span></a><a class="item" href="/2025/08/06/CF1453D/"><span class="title">题解：CF1453D Checkpoints</span></a><a class="item" href="/2025/08/04/CF2129C/"><span class="title">题解：CF2129C Interactive RBS</span></a><a class="item" href="/2025/07/27/CF1010C/"><span class="title">题解：CF1010C Border</span></a><a class="item" href="/2025/07/01/Newcoder25/"><span class="title">2025 牛客暑期多校训练记录</span></a><a class="item" href="/2025/06/29/CF2120E/"><span class="title">题解：CF2120E Lanes of Cars</span></a><a class="item" href="/2025/06/26/CF2121H/"><span class="title">题解：CF2121H Ice Baby</span></a><a class="item" href="/2025/06/07/UTPC2024C/"><span class="title">【题解】[UTPC2024] C.Card Deck</span></a><a class="item" href="/2025/05/07/CF2107E/"><span class="title">题解：CF2107E Ain and Apple Tree</span></a><a class="item" href="/2025/05/02/XCPC2025-2026/"><span class="title">2025-2026 XCPC</span></a><a class="item" href="/2025/01/06/Floyd/"><span class="title">你真的懂 Floyd 吗</span></a><a class="item" href="/2024/12/28/GameTheory/"><span class="title">博弈论与状压</span></a><a class="item" href="/2024/12/27/Topo/"><span class="title">树的拓扑序</span></a><a class="item" href="/2024/12/26/Inversion/"><span class="title">逆序对与期望</span></a><a class="item" href="/2024/12/20/GCD/"><span class="title">GCD 题集</span></a><a class="item" href="/2024/11/21/Bits/"><span class="title">位思想</span></a><a class="item" href="/2024/11/02/ICPC%20Nanjing24/"><span class="title">ICPC 小白勇闯南京</span></a><a class="item" href="/2024/10/30/Geometry/"><span class="title">计算几何 学习笔记</span></a><a class="item" href="/2024/09/01/XCPC2024/"><span class="title">XCPC 2024</span></a><a class="item" href="/2024/08/13/XOR/"><span class="title">求 $[1,n]$ 的异或和</span></a><a class="item" href="/2023/09/29/NOIP2023/"><span class="title">NOIP 2023 摆烂记</span></a><a class="item" href="/2022/10/04/NOIP2022/"><span class="title">2022 NOIP 备赛记</span></a><a class="item" href="/2022/08/21/Time%20Complexity/"><span class="title">浅谈 $T(n) = a(\lfloor\frac{n}{b}\rfloor) + f(n)$</span></a><a class="item" href="/2022/07/24/Data%20Structure/"><span class="title">一些关于数据结构的杂谈</span></a><a class="item active" href="/2022/01/22/WC2022/"><span class="title">WC 2022 学习笔记</span><svg class="active-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M21 11.098v4.993c0 3.096 0 4.645-.734 5.321c-.35.323-.792.526-1.263.58c-.987.113-2.14-.907-4.445-2.946c-1.02-.901-1.529-1.352-2.118-1.47a2.225 2.225 0 0 0-.88 0c-.59.118-1.099.569-2.118 1.47c-2.305 2.039-3.458 3.059-4.445 2.945a2.238 2.238 0 0 1-1.263-.579C3 20.736 3 19.188 3 16.091v-4.994C3 6.81 3 4.666 4.318 3.333C5.636 2 7.758 2 12 2c4.243 0 6.364 0 7.682 1.332C21 4.665 21 6.81 21 11.098" opacity=".5"/><path fill="currentColor" d="M9 5.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5z"/></svg></a><a class="item" href="/2021/11/19/Math/"><span class="title">初级数学 学习笔记</span></a><a class="item" href="/2021/11/06/NOIP2021/"><span class="title">2021 NOIP 备赛记</span></a><a class="item" href="/2020/11/07/CSP2020/"><span class="title">CSP 2020 场外篇</span></a></div></widget>
+
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">Recent Update</span></div><div class="widget-body fs14"><a class="item title" href="/2025/05/02/XCPC2025-2026/"><span class="title">2025-2026 XCPC</span></a><a class="item title" href="/2025/06/07/UTPC2024C/"><span class="title">【题解】[UTPC2024] C.Card Deck</span></a><a class="item title" href="/2025/05/07/CF2107E/"><span class="title">题解：CF2107E Ain and Apple Tree</span></a><a class="item title" href="/2025/06/26/CF2121H/"><span class="title">题解：CF2121H Ice Baby</span></a><a class="item title" href="/2025/06/29/CF2120E/"><span class="title">题解：CF2120E Lanes of Cars</span></a><a class="item title" href="/2025/08/04/CF2129C/"><span class="title">题解：CF2129C Interactive RBS</span></a><a class="item title" href="/2025/07/27/CF1010C/"><span class="title">题解：CF1010C Border</span></a><a class="item title" href="/2025/08/06/CF1453D/"><span class="title">题解：CF1453D Checkpoints</span></a><a class="item title" href="/2025/08/07/CCPC%20CQ24%20Finite%20Decimal/"><span class="title">CCPC 2024 重庆站 有限小数</span></a><a class="item title" href="/2025/09/10/CF2140E/"><span class="title">题解：CF2140E2 Prime Gaming</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a>
+<span class="sep"></span><a class="cap breadcrumb" id="menu" href="/topic/">Topic</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/2025/12/02/CCPC%20Chongqing25/">Programming Contest</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2022-01-21T16:00:00.000Z">2022-01-22</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2026-01-18T13:44:59.071Z">2026-01-18</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>WC 2022 学习笔记</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><p>$\texttt{Day 1 2022.01.22}$ 开幕式，好耶！<br><img src="https://cdn.luogu.com.cn/upload/image_hosting/u4fi7tjc.png" alt="开幕式"></p>
+<hr>
+<p>$\texttt{Day 2 2022.01.23}$ </p>
+<h3 id="上午"><a href="#上午" class="headerlink" title="上午"></a>上午</h3><p>才知道课程都是二选一，选了个第二课堂听听。</p>
+<h4 id="前置"><a href="#前置" class="headerlink" title="前置"></a>前置</h4><ol>
+<li>向量加减 </li>
+</ol>
+<script type="math/tex; mode=display">
+\begin{cases}
+p = (x_1,y_1),q = (x_2,y_2)\\
+p + q = (x_1 + x_2,y_1 + y_2)\\
+p - q = (x_1 - x_2,y_1 - y_2)
+\end{cases}</script><ol>
+<li>向量点积【标量】</li>
+</ol>
+<script type="math/tex; mode=display">
+\begin{cases}
+\overrightarrow{AB} \cdot \overrightarrow{CD} = x_1x_2 + y_1y_2\\
+\overrightarrow{AB} \cdot \overrightarrow{CD} = |AB||CD| \cos \theta
+\end{cases}</script><ol>
+<li>向量叉积【矢量】</li>
+</ol>
+<script type="math/tex; mode=display">
+\begin{cases}
+\overrightarrow{AB} \times \overrightarrow{CD} = x_1y_2 - x_2y_1\\
+\overrightarrow{AB} \times \overrightarrow{CD} = |AB||CD|\sin \theta
+\end{cases}</script><p>同时有 $\textbf{0} \times \textbf{a} = \textbf{a} \times \textbf{0} = \textbf{a} \times \textbf{a} = \textbf{0}$。</p>
+<p>$|\textbf{a} \times \textbf{b}|$ 在数值上等于 $\textbf{a},\textbf{b}$ 构成的平行四边形的面积。</p>
+<ol>
+<li>向量旋转</li>
+</ol>
+<p>$\textbf{a} = (x,y)$，逆时针旋转 $\theta$ 后为 $\textbf{a’} = (x \cos \theta - y \sin \theta,x \sin \theta + y\cos \theta)$。</p>
+<ol>
+<li>多边形面积</li>
+</ol>
+<p>$S = \frac{1}{2}|\sum_{i = 1}^{n} V_i \times V_i \mod n + 1|$</p>
+<ol>
+<li><p>极坐标与极坐标系</p>
+</li>
+<li><p>误差判断</p>
+</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span> eps = <span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">return</span> (x &gt; eps) - (x &lt; eps);</span><br></pre></td></tr></table></figure>
+<h4 id="距离"><a href="#距离" class="headerlink" title="距离"></a>距离</h4><ol>
+<li>欧式距离</li>
+</ol>
+<p>二维 $|AB| = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$</p>
+<p>三维 $|AB| = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$</p>
+<ol>
+<li>曼哈顿距离</li>
+</ol>
+<p>$d(A,B) = |x_1 - x_2| + |y_1 - y_2|$</p>
+<ol>
+<li>切比雪夫距离</li>
+</ol>
+<p>$d(A,B) = \max (|x_1 - x_2|,|y_1 - y_2|)$</p>
+<ol>
+<li>曼哈顿距离与切比雪夫距离的联系</li>
+</ol>
+<p>曼哈顿距离 $\to$ 切比雪夫距离：$(x,y) \to (x + y,x - y)$</p>
+<p>切比雪夫距离 $\to$ 曼哈顿距离：$(x,y) \to (\dfrac{x + y}{2},\dfrac{x - y}{2})$。即旋转 $\frac{\pi}{4}$ 后缩小一半。</p>
+<h4 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h4><ol>
+<li>点是否在直线上</li>
+</ol>
+<p>① $(Q - P_1) \times (P_2 - P_1) = 0$<br>② $Q$ 在以 $P_1,P_2$ 为对角顶点的矩形内</p>
+<ol>
+<li>两线段是否相交</li>
+</ol>
+<p>① 快速排斥试验 若两矩形不相交，则线段不相交<br>② 跨立实验 $(P_1 - Q_1) \times (Q_2 - Q_1) \ge 0$ 和 $ (Q_2 - Q_1) \times (P_2 - Q_1) \ge 0$</p>
+<ol>
+<li>线段和直线是否相交</li>
+</ol>
+<p>只需用跨立实验判断即可。</p>
+<ol>
+<li>点是否在多边形中</li>
+</ol>
+<p>以 $p$ 为端点，向左方作射线 $L$，根据交点个数的奇偶性判断。但需要注意与顶点相交、与边重合的特殊情况。</p>
+<ol>
+<li>线段是否在多边形内</li>
+</ol>
+<p>① 两线段端点在多边形内<br>② 线段与多边形所有边都不内交（两线段相交且交点不在两线段的端点）</p>
+<p>做法是求出所有与线段相交的顶点，然后按照 $(x,y)$ 排序，若相邻两点中点均在多边形内，则符合条件。</p>
+<h4 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h4><ol>
+<li><p>点到线段的最近点</p>
+</li>
+<li><p>计算点到折线/矩形/多边形的最近点</p>
+</li>
+<li><p>计算点到圆的最近距离及交点坐标</p>
+</li>
+<li><p>求线段或直线与圆的交点</p>
+</li>
+</ol>
+<p>均可分为是否与坐标轴平行的两种情况。对于不平行的较复杂情况，通解为联立解方程组然后求出交点。</p>
+<h4 id="多边形"><a href="#多边形" class="headerlink" title="多边形"></a>多边形</h4><ol>
+<li>二维凸包 </li>
+</ol>
+<p>例题 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2742">P2742 [USACO5.1]圈奶牛Fencing the Cows /【模板】二维凸包</a></p>
+<p>① Andrew 算法 用单调栈维护，时间复杂度 $O(n \log n)$。<br>② Graham 扫描算法 找到左下角的点，然后按极角排序。</p>
+<ol>
+<li>旋转卡壳</li>
+</ol>
+<p>例题 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1452">P1452 [USACO03FALL]Beauty Contest G /【模板】旋转卡壳</a></p>
+<p>逆时针枚举凸包边，记录并维护一个当前的最近点（根据叉积计算三角形面积）</p>
+<ol>
+<li>半平面交</li>
+</ol>
+<p>例题 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4196">P4196 [CQOI2006]凸多边形 /【模板】半平面交</a></p>
+<script type="math/tex; mode=display">
+\begin{cases}
+A_1x + B_1y + C_1 \ge 0\\
+A_2x + B_2y + C_2 \ge 0\\
+\cdots\\
+A_nx + B_ny + C_n \ge 0
+\end{cases}</script><p>$S \&amp; I$ 算法 极角排序，然后维护单调队列（注意先判断队尾再判断队首的情况）</p>
+<ol>
+<li>平面最近点对</li>
+</ol>
+<p>例题 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7883">P7883 平面最近点对</a></p>
+<p>分治的思想，以 $P_m$ 为界，拆分出点集 $A_1,A_2$，然后分别找最近点对，距离为 $h$。再找一个点在 $A_1$，另一个在 $A_2$ 的小于 $h$ 的点对。最后的时间复杂度为 $O(n \log n)$。</p>
+<h3 id="下午"><a href="#下午" class="headerlink" title="下午"></a>下午</h3><p>有关链表的内容。</p>
+<h4 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h4><ol>
+<li>插入</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data[s] = x;</span><br><span class="line">left[s] = left[p];</span><br><span class="line">right[left[p]] = s;</span><br><span class="line">right[s] = p;</span><br><span class="line">left[p] = s;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>删除 </li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">right[left[p]] = right[p];</span><br><span class="line">left[right[p]] = left[p];</span><br></pre></td></tr></table></figure>
+<ol>
+<li>恢复</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">right[left[p]] = p;</span><br><span class="line">left[right[p]] = p;</span><br></pre></td></tr></table></figure>
+<h4 id="舞蹈链"><a href="#舞蹈链" class="headerlink" title="舞蹈链"></a>舞蹈链</h4><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4929">P4929 【模板】舞蹈链（DLX）</a></p>
+<p>一个运用链表到极致的例子。主要步骤如下：</p>
+<p>① 矩阵 $A$ 为空，返回已解决。  </p>
+<p>② 选择一列 $c$，通常选择 $1$ 的个数最少的那一列。</p>
+<p>③ a. 若 $A_{r,c} = 1$，说明行 $r$ 存在，进入 ④；<br>b. 不存在，回溯，回溯删除，进入 ③ a.。</p>
+<p>④ 把 $r$ 包含进部分解。</p>
+<p>⑤ 对于 $\forall j,A_{r,j} = 1$，若 $\forall i,A_{i,j} = 1$，删除第 $i$ 行，否则删除第 $j$ 行。</p>
+<p>⑥ 重复递归。</p>
+<p>舞蹈链的思想还可以运用到别的问题中去。我们将矩阵的行的意义为所有的情况，列的意义为约束条件。</p>
+<ol>
+<li>$N$ 皇后问题</li>
+</ol>
+<p>共有 $n^2$ 个格子，所以矩阵共有 $n^2$ 行。而因每行每列每斜行只能有一个皇后的约束条件，所以有 $n$ 行 $n$ 列，$2n - 1$ 条主对角线与副对角线，即矩阵共有 $6n - 2$ 列。</p>
+<ol>
+<li>数独</li>
+</ol>
+<p>先分析行，共有 $9 \times 9$ 个格子，可以填入数字 $1$ 至 $9$，所以共有 $9 \times 9 \times 9 = 729$ 行。</p>
+<p>每一个格子都需要填入数字，所以要有 $9 \times 9$ 列存放是否已经填入数字的信息。接下去的 $3$ 个 $9 \times 9$ 列，分别记录行、列、宫的数字放置情况。所以共需要 $4 \times 81 = 324$ 列。</p>
+<h4 id="跳表"><a href="#跳表" class="headerlink" title="跳表"></a>跳表</h4><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3103">例题 P3103 [USACO14FEB]Airplane Boarding G</a></p>
+<p>跳表可以实现链表中的快速查找，从第一个位置的顶端开始一层层往下跳，直至返回 $x$ 不存在。时间复杂度为 $O(\log n)$，空间复杂度为 $O(n)$【建立在随机选择插入层的前提下】。</p>
+<h4 id="例题选讲"><a href="#例题选讲" class="headerlink" title="例题选讲"></a>例题选讲</h4><p>没听的太明白（其实跳表也不是很明白），选几道洛谷上有的题目列一下。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7988">P7988 [USACO21DEC] HILO G</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1792">P1792 [国家集训队]种树</a></p>
+<h3 id="晚上"><a href="#晚上" class="headerlink" title="晚上"></a>晚上</h3><p>营员交流，属于是在听天书。几乎属于听不懂的状态，也就当长长见识了 $\texttt{qwq}$。</p>
+<p>今天一天累计算是听了 $9$ 个多小时，休息去了！$\texttt{Day 2}$ 结束。</p>
+<hr>
+<p>$\texttt{Day 3 2022.01.24}$ </p>
+<h3 id="上午-1"><a href="#上午-1" class="headerlink" title="上午"></a>上午</h3><p>学习网络流，中午的时候到会议间中又听了听《多重时空下的算法竞赛》。</p>
+<h4 id="最大流"><a href="#最大流" class="headerlink" title="最大流"></a>最大流</h4><p>算法妙在建立反向边，主要步骤如下：</p>
+<ul>
+<li><p>$S \to T$ 找到一条增广路</p>
+</li>
+<li><p>求出流路径中边权最小的值</p>
+</li>
+<li><p>维护路径中的反向边</p>
+</li>
+<li><p>重复操作直到 $S$ 与 $T$ 不再连通</p>
+</li>
+</ul>
+<p>于是问题就在于如何找增广路，于是有 $\textit{SAP}$ 算法，即重建距离标号，将图分成若干个“层次”。其中包含的两个优化就是弧优化（如果一条边已经被增广过，那么它就没有可能被增广第二次）与断层优化（若图上出现了断层，也就是说无法再找到增广路，则可直接终止算法）。</p>
+<p>那么这个算法快在哪里呢？通过探寻本质，只有减少冗余以及重复利用可以有效缩短时间。那么该算法通过距离标号，将原来相互独立的增广路相互联系，从而重复利用来节省时间。</p>
+<h4 id="费用流"><a href="#费用流" class="headerlink" title="费用流"></a>费用流</h4><h3 id="下午-1"><a href="#下午-1" class="headerlink" title="下午"></a>下午</h3><p>发现自己学过 <code>tarjan</code> 了，于是想就听听数据结构选讲。但一打开课件就发现都是什么 $\texttt{IOI}$ 黑题，劝退了……还是听 <code>tarjan</code> 吧！</p>
+<h4 id="求-texttt-LCA"><a href="#求-texttt-LCA" class="headerlink" title="求 $\texttt{LCA}$"></a>求 $\texttt{LCA}$</h4><p>若 $\texttt{LCA }(u,v) = k$，当遍历完 $u$ 所在子树后，$u$ 所在子树所有的结点跟 $k$ 其它子树所有结点的 $\texttt{LCA}$ 一定为 $k$。可以通过并查集维护。伪代码大概如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fa[v] = v;vis[v] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (i...)</span><br><span class="line">	<span class="keyword">if</span> (!vis[i]) <span class="built_in">dfs</span> (i),fa[i] = v;</span><br><span class="line"><span class="keyword">for</span> (v...)</span><br><span class="line">	<span class="keyword">if</span> (vis[u]) LCA[u][v] = LCA[v][u] = <span class="built_in">get_fa</span> (u);</span><br></pre></td></tr></table></figure>
+<p>若 $\texttt{LCA }(u,v) = u$，在结点 $u$ 信息返回前，$u$ 结点子树均已访问完，故伪代码此时仍然成立。</p>
+<p><a target="_blank" rel="noopener" href="http://codevs.cn/problem/1036/">例题 codevs 1036 商务问题</a> </p>
+<p>题面中强调<strong>不存在环</strong>，故这是一棵树。考虑树上差分，则有 $dis_{i,j}{\min} = dep_i + dep_j - 2dep_{LCA(i,j)}$。</p>
+<h4 id="求割点"><a href="#求割点" class="headerlink" title="求割点"></a>求割点</h4><p>若 $u$ 为生成树的根，则 $u$ 为割点的充要条件是 $u$ 的子树 $\ge 2$。</p>
+<p>若 $u$ 不为生成树的根，则 $u$ 为割点的充要条件是在 $v$ 或 $v$ 子孙结点和 $u$ 祖先结点不存在回边。</p>
+<p>可以使用时间戳来记录深度优先数与最低深度，有：</p>
+<script type="math/tex; mode=display">
+low[u] = \min
+\begin{cases}
+dfn[u]\\
+\min{(low[v]\mid v \texttt{ is children})}\\
+\min{(dfn[u]\mid (u,v) \texttt{ is cross edge})}
+\end{cases}</script><p>若 $u$ 存在一个孩子 $v$ 使得 $dfn[u] \le low[v]$，则 $u$ 为割点。</p>
+<h4 id="割边"><a href="#割边" class="headerlink" title="割边"></a>割边</h4><p>若 $(u,v)$ 为割边的充要条件是 $u \to v$ 不为重边且 $v$ 或 $v$ 的子孙结点中没有指向 $u$ 或 $u$ 祖先的回边。若 $dfn[u] &lt; low[u]$，则 $(u,v)$ 为割边（与割点思想类似）。</p>
+<p>辨析：</p>
+<ul>
+<li>两割点之间的边一定为割边。</li>
+</ul>
+<p>错误！反例如下：  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A-B     </span><br><span class="line">| |  </span><br><span class="line">C-D  </span><br><span class="line">| |  </span><br><span class="line">E F</span><br></pre></td></tr></table></figure>
+<p>$C,D$ 为割点，但 $(C,D)$ 不为割边。</p>
+<ul>
+<li>割边的两端点均为割点。</li>
+</ul>
+<p>错误！反例如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A-B-C</span><br></pre></td></tr></table></figure>
+<p>$(A,B)$ 为割边，但 $A$ 不为割点。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5058">例题 P5058 [ZJOI2004]嗅探器</a></p>
+<p>若 $v$ 为割点 -&gt; 子树中存在 $b$ -&gt; 所求之点</p>
+<p>关键在于判断子树中是否存在 $b$，可以通过 $dfn[u]$ 判定。若 $dfn[u] &lt; dfn[b]$，则符合条件。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7687">例题 P7687 [CEOI2005] Critical Network Lines</a></p>
+<p>课后补题，解析见我的博文 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/SUNCHAOYI/solution-p7687">【题解】P7687 [CEOI2005] Critical Network Lines </a>。</p>
+<h4 id="强连通分量"><a href="#强连通分量" class="headerlink" title="强连通分量"></a>强连通分量</h4><p>注意，求割点与割边是在无向图中，而强连通分量是在有向图中，要注意区分。</p>
+<p>若 $low[u] &lt; dfn[u]$，则子孙结点能连到自己上方的结点；若 $dfn[u] = dfn[u]$，则 $u$ 为根，内部仍存在一个或多个强连通分量，递归求解即可。</p>
+<p>当 $low[u] = dfn[u]$ 为结束条件进行弹栈得到强连通分量。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2341">例题 P2341 [USACO03FALL][HAOI2006]受欢迎的牛 G</a></p>
+<p>差不多可以说是板子题，缩点后判断是否只有 $1$ 个出度为 $0$ 的点。</p>
+<h3 id="晚上-1"><a href="#晚上-1" class="headerlink" title="晚上"></a>晚上</h3><p>趁着晚饭后做了课上讲的一道题，并写了篇题解。</p>
+<p>还是营员交流，还是属于听不懂的状态。</p>
+<p>$\texttt{Day 3}$ 结束。</p>
+<hr>
+<p>$\texttt{Day 4 2022.01.25}$ </p>
+<h3 id="上午-2"><a href="#上午-2" class="headerlink" title="上午"></a>上午</h3><p>数据结构中的复杂树问题，收获巨大！！！重点主要放在了前三个中，后面基本属于提了提。</p>
+<h3 id="树链剖分"><a href="#树链剖分" class="headerlink" title="树链剖分"></a>树链剖分</h3><p>轻重链剖分。一个定义就是重子结点表示其子结点中子树最大的子结点。</p>
+<ol>
+<li>性质</li>
+</ol>
+<p>① 在每条重链结点的 <code>dfn</code> 连续，即优先选择重子结点。<br>② 每个子树内的 <code>dfn</code> 连续。<br>③ 向下经过一条轻边，子树大小至少减半，不超过 $\log n$ 条重链。<br>④ 重链开头不一定为重子结点。</p>
+<ol>
+<li>建树过程</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs1</span> <span class="params">(<span class="type">int</span> u,<span class="type">int</span> fa)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	sz[u] = <span class="number">1</span>;f[u] = fa;dep[u] = dep[fa] + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = head[u];i;i = nxt[i])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> v = to[i];</span><br><span class="line">		<span class="keyword">if</span> (v != fa)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">dfs1</span> (v,u);</span><br><span class="line">			sz[u] += sz[v];</span><br><span class="line">			<span class="keyword">if</span> (sz[v] &gt; sz[hson[u]]) hson[u] = v;<span class="comment">//求重儿子 </span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>树的分解</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs2</span> <span class="params">(<span class="type">int</span> u,<span class="type">int</span> fa)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (hson[u])<span class="comment">//优先走重边 </span></span><br><span class="line">	&#123;</span><br><span class="line">		seg[hson[u]] = ++seg[<span class="number">0</span>]; </span><br><span class="line">		top[hson[u]] = top[u];<span class="comment">//重链的顶端</span></span><br><span class="line">		rev[seg[<span class="number">0</span>]] = hson[u];</span><br><span class="line">		<span class="built_in">dfs2</span> (hson[u],u); </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = head[u];i;i = nxt[i])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> v = to[i];</span><br><span class="line">		<span class="keyword">if</span> (!top[v])</span><br><span class="line">		&#123;</span><br><span class="line">			seg[v] = ++seg[<span class="number">0</span>];</span><br><span class="line">			rev[seg[<span class="number">0</span>]] = v;</span><br><span class="line">			top[v] = v;<span class="comment">//此时 (u,v) 为轻边，v 为所在重链的顶端</span></span><br><span class="line">			<span class="built_in">dfs2</span> (v,u); </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3384">P3384 【模板】轻重链剖分/树链剖分</a> 模板题。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2590">例题 P2590 [ZJOI2008]树的统计</a></p>
+<p>通过向上跳来维护信息。若在重链上，则跳到顶端；若不在则在其顶端向上跳一步至重链。直到两点均在同一条重链上即可。核心代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">ask</span> <span class="params">(<span class="type">int</span> u,<span class="type">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> fx = top[u],fy = top[v];</span><br><span class="line">	<span class="keyword">while</span> (fx != fy)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (dep[fx] &lt; dep[fy]) <span class="built_in">swap</span> (u,v),<span class="built_in">swap</span> (fx,fy);<span class="comment">//深度大的向上跳</span></span><br><span class="line">		<span class="built_in">query</span> (<span class="number">1</span>,<span class="number">1</span>,seg[<span class="number">0</span>],seg[fx],seg[u]);</span><br><span class="line">		u = f[fx],fx = top[u]; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (dep[u] &gt; dep[v]) <span class="built_in">swap</span> (u,v);</span><br><span class="line">	<span class="built_in">query</span> (<span class="number">1</span>,<span class="number">1</span>,seg[<span class="number">0</span>],seg[u],seg[v]);<span class="comment">//在同一条重链上的不同位置，最后需将这一段区间也进行求解 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>再放一道练手的题目，几乎也是裸题。 </p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2146">P2146 [NOI2015] 软件包管理器</a></p>
+<p>支持两种操作，树上的区间修改与子树的修改。注意因为涉及 $0$ 和 $1$ 两种情况，因此打懒标记的时候需要注意一下 <code>if (tmp[cur] == -1) return ;</code>，当然忽略这个语句就不存在这个问题了。</p>
+<h4 id="伸展树-texttt-splay"><a href="#伸展树-texttt-splay" class="headerlink" title="伸展树 $\texttt{splay}$"></a>伸展树 $\texttt{splay}$</h4><p>均摊时间复杂度为 $O(\log n)$，通过势能分析可以得证。伸展树有一个性质，就是中序遍历不会改变。</p>
+<ol>
+<li><p>右旋 <code>zig(x)</code><br><img src="https://cdn.luogu.com.cn/upload/image_hosting/0bn4lx6h.png" alt="zig(x)"></p>
+</li>
+<li><p>左旋 <code>zag(x)</code></p>
+</li>
+</ol>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/047mq30j.png" alt="zag(x)"></p>
+<ol>
+<li><p><code>rotate</code> 函数</p>
+</li>
+<li><p><code>splay</code> 函数</p>
+</li>
+<li><p>插入</p>
+</li>
+<li><p>查找</p>
+</li>
+<li><p>分裂</p>
+</li>
+<li><p>合并</p>
+</li>
+<li><p>删除</p>
+</li>
+<li><p>找寻排名为 $k$ 的数</p>
+</li>
+<li><p>区间删除</p>
+</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3391">例题 P3391 【模板】文艺平衡树</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3224">例题 P3224 [HNOI2012]永无乡</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2042">例题 P2042 [NOI2005] 维护数列</a></p>
+<h3 id="下午-2"><a href="#下午-2" class="headerlink" title="下午"></a>下午</h3><p>还是听《新版 $\texttt{NOI-Linux}$ 系统使用》比较实用叭。</p>
+<p>在电脑上成功装了一个 $\texttt{NOI-Linux}$ 虚拟机，针不戳。捣鼓了一下午的虚拟机，效果如下：</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/vtvldf9o.png" alt="1"></p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/qt81h9os.png" alt="2"></p>
+<p>非常好！~~~</p>
+<p>$\texttt{Day 4}$ 结束。</p>
+<hr>
+<p>$\texttt{Day 5 2022.01.26}$ </p>
+<h3 id="上午-3"><a href="#上午-3" class="headerlink" title="上午"></a>上午</h3><p>听 $\texttt{IOI}$ 命题方向。只是停留在<strong>听听</strong>的层面，但不得不说交互题和构造题等非传统题可以说是兴起了。还看到了一些“恶搞题”，印象最深的就是：</p>
+<ol>
+<li>人工智能题？面向数据才是真理！</li>
+</ol>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/h5fmw1ew.png" alt="1"></p>
+<ol>
+<li><code>MoMOOMoo</code> 题</li>
+</ol>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/li5qmq7j.png" alt="2"></p>
+<p><del>好像有个营员因“不文明语言”被管理员踢了</del>…害怕 $\texttt{.jpg}$</p>
+<h3 id="下午-3"><a href="#下午-3" class="headerlink" title="下午"></a>下午</h3><p>应该是冬令营的最后一节课了 $\texttt{awa}$，题目选讲，听听神仙是怎么爆切 $\texttt{IOI}$ 的叭。</p>
+<p>似乎今天 $15:30$ 就结束了哈，明天结营测试，$\texttt{RP++}$ 吧！</p>
+<h3 id="晚上-2"><a href="#晚上-2" class="headerlink" title="晚上"></a>晚上</h3><p>试机，没啥大问题。</p>
+<p>$\texttt{Day 5}$ 结束。</p>
+<hr>
+<p>$\texttt{Day 6 2022.01.27}$ </p>
+<p>两道传统题，一道交互题。先开了 $\texttt{T2}$，用空间换时间打了一个 $O(nm)$。然后发现啥都不会，交互题主要之前没有做过，所以就不太会格式，最后应该 $\texttt{CE}$ 了。想着这样肯定也就不能拿牌，所以 $\texttt{T1}$ 的 $\texttt{25 pts}$ 最后也没拿。</p>
+<p>$\texttt{Day 7 2022.01.28}$ 很后悔没打那个暴力，果然 $\texttt{Fe}$ 了，被卡线 $\texttt{qwq}$。</p>
+</article>
+<div class="article-footer">
+    <section id="license">
+      <div class="header"><span>License</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+
+    <section id="share">
+      <div class="header"><span>Share</span></div>
+      <div class="body">
+        <div class="link"><input class="copy-area" readonly="true" id="copy-link" value="http://example.com/2022/01/22/WC2022/" /></div>
+        <div class="social-wrap dis-select"><a class="social share-item wechat" onclick="util.toggle(&quot;qrcode-wechat&quot;)"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/b32ef3da1162a.svg" /></a><a class="social share-item weibo" target="_blank" rel="external nofollow noopener noreferrer" href="https://service.weibo.com/share/share.php?url=http://example.com/2022/01/22/WC2022/&title=WC 2022 学习笔记 - SUNCHAOYI&pics=/img/programming.png&summary=$\texttt{Day 1 2022.01.22}$ 开幕式，好耶！
+
+$\texttt{Day 2 2022.01.23}$ 
+上午才知道课程都是二选一，选了个第二课堂听听。
+前置
+向量加减 
+
+
+\begin{cases}
+p ..."><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/80c07e4dbb303.svg" /></a><a class="social share-item email" href="mailto:?subject=WC 2022 学习笔记 - SUNCHAOYI&amp;body=http://example.com/2022/01/22/WC2022/"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/a1b00e20f425d.svg" /></a><a class="social share-item link" onclick="util.copy(&quot;copy-link&quot;, &quot;Copied!&quot;)"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/8411ed322ced6.svg" /></a></div>
+        
+        <div class="qrcode" id="qrcode-wechat" style="opacity:0;height:0">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=http://example.com/2022/01/22/WC2022/"/>
+        </div>
+        
+      </div>
+    </section>
+    </div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">Newer</div><a href="/2022/07/24/Data%20Structure/">一些关于数据结构的杂谈</a></div><div class="item" id="next"><div class="note">Older</div><a href="/2021/11/19/Math/">初级数学 学习笔记</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">Chaoyi, Sun</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">On This Page</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E5%8D%88"><span class="toc-text">上午</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE"><span class="toc-text">前置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%9D%E7%A6%BB"><span class="toc-text">距离</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A4%E6%96%AD"><span class="toc-text">判断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97"><span class="toc-text">计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E8%BE%B9%E5%BD%A2"><span class="toc-text">多边形</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E5%8D%88"><span class="toc-text">下午</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8"><span class="toc-text">双向链表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%88%9E%E8%B9%88%E9%93%BE"><span class="toc-text">舞蹈链</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%B3%E8%A1%A8"><span class="toc-text">跳表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98%E9%80%89%E8%AE%B2"><span class="toc-text">例题选讲</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%9A%E4%B8%8A"><span class="toc-text">晚上</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E5%8D%88-1"><span class="toc-text">上午</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E6%B5%81"><span class="toc-text">最大流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B4%B9%E7%94%A8%E6%B5%81"><span class="toc-text">费用流</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E5%8D%88-1"><span class="toc-text">下午</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B1%82-texttt-LCA"><span class="toc-text">求 $\texttt{LCA}$</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B1%82%E5%89%B2%E7%82%B9"><span class="toc-text">求割点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%B2%E8%BE%B9"><span class="toc-text">割边</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F"><span class="toc-text">强连通分量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%9A%E4%B8%8A-1"><span class="toc-text">晚上</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E5%8D%88-2"><span class="toc-text">上午</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86"><span class="toc-text">树链剖分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%B8%E5%B1%95%E6%A0%91-texttt-splay"><span class="toc-text">伸展树 $\texttt{splay}$</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E5%8D%88-2"><span class="toc-text">下午</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E5%8D%88-3"><span class="toc-text">上午</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E5%8D%88-3"><span class="toc-text">下午</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%9A%E4%B8%8A-2"><span class="toc-text">晚上</span></a></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>Scroll to Top</span></a></div></widget>
+</div></aside><div class='float-panel'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+
+
+<script type="text/javascript">
+  window.canonical = {"originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  const ctx = {
+    date_suffix: {
+      just: `Just`,
+      min: `minutes ago`,
+      hour: `hours ago`,
+      day: `days ago`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+    loading: `https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd`,
+  };
+  const deps = {
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
+    lazyload: `/%5Bobject%20Object%5D`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      const maxRetry = 3;
+      let retryCount = 0;
+
+      return new Promise((resolve, reject) => {
+        const load = () => {
+          utils.onLoading?.(el);
+
+          let timedOut = false;
+          const timeout = setTimeout(() => {
+            timedOut = true;
+            console.warn('[request] 超时:', url);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject('请求超时');
+            } else {
+              setTimeout(load, 1000);
+            }
+          }, 5000);
+
+          fetch(url).then(resp => {
+            if (timedOut) return;
+            clearTimeout(timeout);
+
+            if (!resp.ok) throw new Error('响应失败');
+            return resp;
+          }).then(data => {
+            if (timedOut) return;
+            utils.onLoadSuccess?.(el);
+            callback(data);
+            resolve(data);
+          }).catch(err => {
+            clearTimeout(timeout);
+            console.warn('[request] 错误:', err);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject(err);
+            } else {
+              setTimeout(load, 1000);
+            }
+          });
+        };
+
+        load();
+      });
+    },
+    requestWithoutLoading: (url, options = {}, maxRetry = 2, timeout = 5000) => {
+      return new Promise((resolve, reject) => {
+        let retryCount = 0;
+
+        const tryRequest = () => {
+          let timedOut = false;
+          const timer = setTimeout(() => {
+            timedOut = true;
+            if (++retryCount > maxRetry) reject('timeout');
+            else tryRequest();
+          }, timeout);
+
+          fetch(url, options)
+            .then(resp => {
+              clearTimeout(timer);
+              if (!resp.ok) throw new Error('bad response');
+              resolve(resp);
+            })
+            .catch(err => {
+              clearTimeout(timer);
+              if (++retryCount > maxRetry) reject(err);
+              else setTimeout(tryRequest, 500);
+            });
+        };
+
+        tryRequest();
+      });
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+<script async src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    callback_loaded: (el) => {
+      el.classList.add('loaded');
+      const wrapper = el.closest('.lazy-box');
+      const icon = wrapper?.querySelector('.lazy-icon');
+      if (icon) icon.remove();
+    }
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+
+  window.wrapLazyloadImages = (container) => {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+    if (!container) return;
+    
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => {
+      if (img.classList.contains('lazy')) return;
+
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lazy-box';
+
+      const newImg = img.cloneNode();
+      newImg.removeAttribute('src');
+      newImg.setAttribute('data-src', src);
+      newImg.classList.add('lazy');
+
+      const icon = document.createElement('div');
+      icon.className = 'lazy-icon';
+      if (def.loading) {
+        icon.style.backgroundImage = `url("${def.loading}")`;
+      }
+
+      wrapper.appendChild(newImg);
+      wrapper.appendChild(icon);
+
+      img.replaceWith(wrapper);
+    });
+
+    // 通知 LazyLoad 更新
+    if (window.lazyLoadInstance?.update) {
+      window.lazyLoadInstance.update();
+    }
+  }
+  
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.33.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    // applyThemeToGiscus(theme)
+  }
+
+  // FIXME: 这会导致无法使用 preferred_color_scheme 以外的主题
+  const applyThemeToGiscus = (theme) => {
+    // theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `Switched to Light Mode`,
+      dark: `Switched to Dark Mode`,
+      auto: `Switched to Auto Mode`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote.xaox.cc/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote.xaox.cc/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error), .with-fancybox .atk-content img:not([atk-emoticon])';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const memos = document.getElementsByClassName('ds-memos');
+    if (memos != undefined && memos.length > 0) {
+      needFancybox = true;
+    }
+    const fancybox = document.getElementsByClassName('with-fancybox');
+    if (fancybox != undefined && fancybox.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+
+<script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+  MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>
